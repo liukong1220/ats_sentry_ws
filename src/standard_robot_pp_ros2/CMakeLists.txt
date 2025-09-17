@@ -29,6 +29,7 @@ ament_auto_find_build_dependencies(REQUIRED
   nav2_msgs 
   rclcpp_action
   tf2_geometry_msgs
+  behaviortree_cpp_v3
 )
 
 rclcpp_components_register_node(${PROJECT_NAME}

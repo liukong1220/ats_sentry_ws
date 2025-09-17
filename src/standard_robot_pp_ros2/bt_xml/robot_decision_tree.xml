@@ -1,0 +1,65 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+
+    <Sequence name="Decision">
+      <IsGameStarted/>
+
+      <Fallback>
+
+        <!-- 弹药低 -> 补给（最高优先级） -->
+        <Sequence>
+          <IsAmmoLow/>
+          <SendNav_Supply/>
+          <TriggerStop/>
+        </Sequence>
+
+        <!-- 时间正常/充足 -> 根据血量 -->
+        <Sequence>
+          <IsTimeNormal/>
+          <Fallback>
+            <Sequence>
+              <IsHpNormal/>
+              <SendNav_Patrol/>
+              <TriggerStop/>
+            </Sequence>
+
+            <Sequence>
+              <IsHpLow/>
+              <SendNav_Defense/>
+            </Sequence>
+
+            <Sequence>
+              <IsHpCritical/>
+              <CancelGoal/>
+              <SendNav_Safe/>
+              <TriggerStop/>
+            </Sequence>
+          </Fallback>
+        </Sequence>
+
+        <!-- 时间紧张 -> 退防 -->
+        <Sequence>
+          <IsTimeTense/>
+          <SendNav_Defense/>
+        </Sequence>
+
+        <!-- 时间危急 -> 取消+安全点 -->
+        <Sequence>
+          <IsTimeCritical/>
+          <CancelGoal/>
+          <SendNav_Safe/>
+          <TriggerStop/>
+        </Sequence>
+
+        <!-- 比赛结束 -> 取消当前任务 -->
+        <Sequence>
+          <IsTimeOver/>
+          <CancelGoal/>
+        </Sequence>
+
+      </Fallback>
+    </Sequence>
+
+  </BehaviorTree>
+</root>
+
