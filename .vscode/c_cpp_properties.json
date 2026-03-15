@@ -1,0 +1,47 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ats/ws_livox/install/livox_ros_driver2/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/BehaviorTree.ROS2/behaviortree_ros2/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_core/rmoss_base/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_core/rmoss_cam/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_core/rmoss_projectile_motion/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_core/rmoss_util/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_gazebo/rmoss_gz_base/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_gazebo/rmoss_gz_bridge/include/**",
+        "/home/ats/ats_sentry_ws/src/dependencies/rmoss_gazebo/rmoss_gz_cam/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_rm_vision/armor_detector_opencv/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_rm_vision/armor_detector_openvino/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_rm_vision/armor_tracker/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_rm_vision/projectile_motion/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_behavior/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/fake_vel_transform/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/ign_sim_pointcloud_tool/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/loam_interface/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/pb_nav2_plugins/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/pb_omni_pid_pursuit_controller/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/pb_teleop_twist_joy/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/point_lio/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/pointcloud_to_laserscan/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/sensor_scan_generation/include/**",
+        "/home/ats/ats_sentry_ws/src/pb2025_sentry_nav/small_gicp_relocalization/include/**",
+        "/home/ats/ats_sentry_ws/src/standard_robot_pp_ros2/include/**",
+        "/home/ats/ats_sentry_ws/src/tools/pcd2pgm/include/**",
+        "/home/ats/ats_sentry_ws/src/tools/rosbag2_composable_recorder/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

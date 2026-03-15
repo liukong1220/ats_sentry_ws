@@ -1,0 +1,105 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_auto: 1.3.13 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found ASIO: /usr/include  
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/ats/ats_sentry_ws/src/standard_robot_pp_ros2/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Added test 'clang_format' to check C / C++ code style
+-- Added test 'black' to check Python code style
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2
+[  9%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/crc8_crc16.cpp.o
+[ 27%] Building CXX object CMakeFiles/gimbal_manager_node.dir/rclcpp_components/node_main_gimbal_manager_node.cpp.o
+[ 27%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/gimbal_manager.cpp.o
+[ 36%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o
+[ 45%] Building CXX object CMakeFiles/standard_robot_pp_ros2_node.dir/rclcpp_components/node_main_standard_robot_pp_ros2_node.cpp.o
+[ 54%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/2025_robot_decision.cpp.o
+[ 63%] Building CXX object CMakeFiles/robot_decision_node.dir/rclcpp_components/node_main_robot_decision_node.cpp.o
+[ 72%] Linking CXX executable robot_decision_node
+[ 72%] Built target robot_decision_node
+[ 81%] Linking CXX executable standard_robot_pp_ros2_node
+[ 90%] Linking CXX executable gimbal_manager_node
+[ 90%] Built target standard_robot_pp_ros2_node
+[ 90%] Built target gimbal_manager_node
+[100%] Linking CXX shared library libstandard_robot_pp_ros2.so
+[100%] Built target standard_robot_pp_ros2
+-- Install configuration: ""
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node
+-- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node" to ""
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/gimbal_manager_node
+-- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/gimbal_manager_node" to ""
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/robot_decision_node
+-- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/robot_decision_node" to ""
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/standard_robot_pp_ros2.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/packet_typedef.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/gimbal_manager.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/crc8_crc16.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/robot_info.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/2025_robot_decision.hpp
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.sh
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so
+-- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so" to ""
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/package_run_dependencies/standard_robot_pp_ros2
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/parent_prefix_path/standard_robot_pp_ros2
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.sh
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.sh
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.bash
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.sh
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.zsh
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/packages/standard_robot_pp_ros2
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/rclcpp_components/standard_robot_pp_ros2
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config-version.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.xml

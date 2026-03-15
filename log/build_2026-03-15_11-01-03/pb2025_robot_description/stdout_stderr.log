@@ -1,0 +1,64 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ats/ats_sentry_ws/build/pb2025_robot_description
+-- Install configuration: ""
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//launch
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//launch/robot_description_launch.py
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//params
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//params/robot_description.yaml
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.sdf
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/meshes
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/meshes/mid360.dae
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.config
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.sdf
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/meshes
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/meshes/industrial_camera.dae
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.config
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.sdf
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/meshes
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/meshes/rplidar_a2.dae
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.config
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/simulation_robot.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/pb2025_sentry_robot.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/pb2025_infantry_robot.sdf.xmacro
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//rviz
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//rviz/visualize_robot.rviz
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/gazebo.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/package_run_dependencies/pb2025_robot_description
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/parent_prefix_path/pb2025_robot_description
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/ament_prefix_path.sh
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/ament_prefix_path.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/path.sh
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/path.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.bash
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.sh
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.zsh
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/package.dsv
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/packages/pb2025_robot_description
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/cmake/pb2025_robot_descriptionConfig.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/cmake/pb2025_robot_descriptionConfig-version.cmake
+-- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/package.xml

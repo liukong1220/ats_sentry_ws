@@ -1,0 +1,511 @@
+[0.582s] Invoking command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ats/ats_sentry_ws/src/interfaces/pb_rm_interfaces -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/pb_rm_interfaces
+[0.660s] -- The C compiler identification is GNU 11.4.0
+[0.728s] -- The CXX compiler identification is GNU 11.4.0
+[0.736s] -- Detecting C compiler ABI info
+[0.823s] -- Detecting C compiler ABI info - done
+[0.831s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.831s] -- Detecting C compile features
+[0.831s] -- Detecting C compile features - done
+[0.835s] -- Detecting CXX compiler ABI info
+[0.933s] -- Detecting CXX compiler ABI info - done
+[0.941s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.941s] -- Detecting CXX compile features
+[0.941s] -- Detecting CXX compile features - done
+[0.945s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.536s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.645s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.648s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.655s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.701s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.749s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.150s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.431s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.794s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.820s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.822s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.854s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.854s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.854s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.854s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.886s] -- Found PythonExtra: .so  
+[2.948s] -- Configuring done
+[2.992s] -- Generating done
+[3.003s] -- Build files have been written to: /home/ats/ats_sentry_ws/build/pb_rm_interfaces
+[3.010s] Invoked command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ats/ats_sentry_ws/src/interfaces/pb_rm_interfaces -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/pb_rm_interfaces
+[3.011s] Invoking command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/pb_rm_interfaces -- -j32 -l32
+[3.050s] [  1%] Generating C code for ROS interfaces
+[3.057s] [  1%] Generating C++ code for ROS interfaces
+[3.070s] [  1%] Built target ament_cmake_python_copy_pb_rm_interfaces
+[3.330s] running egg_info
+[3.331s] creating pb_rm_interfaces.egg-info
+[3.332s] writing manifest file 'pb_rm_interfaces.egg-info/SOURCES.txt'
+[3.334s] writing manifest file 'pb_rm_interfaces.egg-info/SOURCES.txt'
+[3.363s] [  1%] Built target ament_cmake_python_build_pb_rm_interfaces_egg
+[4.740s] [  1%] Built target pb_rm_interfaces__cpp
+[4.740s] [  2%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/game_robot_hp__functions.c.o
+[4.741s] [  3%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/rfid_status__functions.c.o
+[4.742s] [  4%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/robot_status__functions.c.o
+[4.742s] [  4%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/gimbal__functions.c.o
+[4.742s] [  5%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/gimbal_cmd__functions.c.o
+[4.742s] [  6%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/models__functions.c.o
+[4.742s] [  7%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/buff__functions.c.o
+[4.742s] [  8%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/event_data__functions.c.o
+[4.744s] [  9%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/game_status__functions.c.o
+[4.744s] [ 10%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/robot_state_info__functions.c.o
+[4.744s] [ 11%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pb_rm_interfaces/msg/detail/ground_robot_position__functions.c.o
+[4.750s] [ 12%] Generating C++ type support dispatch for ROS interfaces
+[4.750s] [ 12%] Generating C++ type support for eProsima Fast-RTPS
+[4.752s] [ 13%] Generating C++ introspection for ROS interfaces
+[4.808s] [ 14%] Linking C shared library libpb_rm_interfaces__rosidl_generator_c.so
+[4.845s] [ 14%] Built target pb_rm_interfaces__rosidl_generator_c
+[4.855s] [ 15%] Generating C type support for eProsima Fast-RTPS
+[4.855s] [ 16%] Generating C introspection for ROS interfaces
+[4.856s] [ 17%] Generating C type support dispatch for ROS interfaces
+[5.986s] [ 18%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/buff__type_support.cpp.o
+[5.986s] [ 19%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/game_status__type_support.cpp.o
+[5.986s] [ 20%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/ground_robot_position__type_support.cpp.o
+[5.986s] [ 20%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/gimbal__type_support.cpp.o
+[5.986s] [ 21%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/rfid_status__type_support.cpp.o
+[5.987s] [ 22%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/game_robot_hp__type_support.cpp.o
+[5.987s] [ 23%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/event_data__type_support.cpp.o
+[5.987s] [ 24%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/robot_status__type_support.cpp.o
+[5.987s] [ 26%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/gimbal_cmd__type_support.cpp.o
+[5.987s] [ 26%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/models__type_support.cpp.o
+[5.987s] [ 27%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pb_rm_interfaces/msg/robot_state_info__type_support.cpp.o
+[6.019s] [ 28%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/buff__type_support.cpp.o
+[6.019s] [ 29%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.cpp.o
+[6.019s] [ 30%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/game_status__type_support.cpp.o
+[6.020s] [ 30%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/event_data__type_support.cpp.o
+[6.021s] [ 31%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/robot_status__type_support.cpp.o
+[6.021s] [ 32%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/rfid_status__type_support.cpp.o
+[6.021s] [ 33%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/gimbal__type_support.cpp.o
+[6.021s] [ 36%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/robot_state_info__type_support.cpp.o
+[6.021s] [ 36%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.cpp.o
+[6.021s] [ 34%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.cpp.o
+[6.021s] [ 37%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/models__type_support.cpp.o
+[6.275s] [ 38%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/buff__type_support.cpp.o
+[6.276s] [ 39%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/ground_robot_position__type_support.cpp.o
+[6.277s] [ 39%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/game_robot_hp__type_support.cpp.o
+[6.278s] [ 40%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/game_status__type_support.cpp.o
+[6.292s] [ 41%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/rfid_status__type_support.cpp.o
+[6.292s] [ 42%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/event_data__type_support.cpp.o
+[6.294s] [ 43%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/robot_status__type_support.cpp.o
+[6.320s] [ 44%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/game_robot_hp__type_support.cpp.o
+[6.326s] [ 45%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/event_data__type_support.cpp.o
+[6.327s] [ 46%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/gimbal__type_support.cpp.o
+[6.327s] [ 47%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/robot_state_info__type_support.cpp.o
+[6.327s] [ 48%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/gimbal_cmd__type_support.cpp.o
+[6.328s] [ 49%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pb_rm_interfaces/msg/models__type_support.cpp.o
+[6.329s] [ 50%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/buff__type_support.cpp.o
+[6.341s] [ 51%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/game_status__type_support.cpp.o
+[6.342s] [ 52%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/ground_robot_position__type_support.cpp.o
+[6.364s] [ 53%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/robot_status__type_support.cpp.o
+[6.366s] [ 54%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/rfid_status__type_support.cpp.o
+[6.377s] [ 55%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/gimbal__type_support.cpp.o
+[6.378s] [ 56%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/gimbal_cmd__type_support.cpp.o
+[6.382s] [ 56%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/models__type_support.cpp.o
+[6.388s] [ 57%] Linking CXX shared library libpb_rm_interfaces__rosidl_typesupport_c.so
+[6.390s] [ 58%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pb_rm_interfaces/msg/detail/dds_fastrtps/robot_state_info__type_support.cpp.o
+[6.411s] [ 59%] Linking CXX shared library libpb_rm_interfaces__rosidl_typesupport_cpp.so
+[6.448s] [ 61%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/buff__type_support_c.cpp.o
+[6.448s] [ 62%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/event_data__type_support_c.cpp.o
+[6.448s] [ 62%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/game_robot_hp__type_support_c.cpp.o
+[6.453s] [ 63%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/buff__type_support.c.o
+[6.453s] [ 64%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/event_data__type_support.c.o
+[6.453s] [ 65%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/game_status__type_support_c.cpp.o
+[6.455s] [ 66%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.c.o
+[6.461s] [ 66%] Built target pb_rm_interfaces__rosidl_typesupport_c
+[6.462s] [ 66%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/ground_robot_position__type_support_c.cpp.o
+[6.474s] [ 67%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/game_status__type_support.c.o
+[6.483s] [ 68%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/rfid_status__type_support_c.cpp.o
+[6.500s] [ 68%] Built target pb_rm_interfaces__rosidl_typesupport_cpp
+[6.500s] [ 69%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/robot_status__type_support_c.cpp.o
+[6.507s] [ 70%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/gimbal__type_support_c.cpp.o
+[6.508s] [ 71%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.c.o
+[6.518s] [ 71%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/robot_status__type_support.c.o
+[6.529s] [ 72%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/rfid_status__type_support.c.o
+[6.529s] [ 73%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/gimbal__type_support.c.o
+[6.529s] [ 74%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.c.o
+[6.535s] [ 75%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support_c.cpp.o
+[6.553s] [ 76%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/models__type_support_c.cpp.o
+[6.558s] [ 77%] Building CXX object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pb_rm_interfaces/msg/detail/robot_state_info__type_support_c.cpp.o
+[6.558s] [ 78%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/models__type_support.c.o
+[6.574s] [ 79%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pb_rm_interfaces/msg/detail/robot_state_info__type_support.c.o
+[6.624s] [ 80%] Linking C shared library libpb_rm_interfaces__rosidl_typesupport_introspection_c.so
+[6.627s] [ 81%] Linking CXX shared library libpb_rm_interfaces__rosidl_typesupport_introspection_cpp.so
+[6.674s] [ 81%] Built target pb_rm_interfaces__rosidl_typesupport_introspection_c
+[6.741s] [ 81%] Built target pb_rm_interfaces__rosidl_typesupport_introspection_cpp
+[6.938s] [ 82%] Linking CXX shared library libpb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[6.977s] [ 83%] Linking CXX shared library libpb_rm_interfaces__rosidl_typesupport_fastrtps_c.so
+[6.993s] [ 83%] Built target pb_rm_interfaces__rosidl_typesupport_fastrtps_cpp
+[7.033s] [ 83%] Built target pb_rm_interfaces__rosidl_typesupport_fastrtps_c
+[7.049s] [ 83%] Built target pb_rm_interfaces
+[7.068s] [ 84%] Generating Python code for ROS interfaces
+[9.169s] [ 84%] Built target pb_rm_interfaces__py
+[9.189s] [ 85%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_robot_status_s.c.o
+[9.189s] [ 86%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_ground_robot_position_s.c.o
+[9.189s] [ 87%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_buff_s.c.o
+[9.189s] [ 88%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_event_data_s.c.o
+[9.190s] [ 89%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_robot_state_info_s.c.o
+[9.191s] [ 91%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_game_robot_hp_s.c.o
+[9.191s] [ 91%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_game_status_s.c.o
+[9.192s] [ 91%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_rfid_status_s.c.o
+[9.192s] [ 92%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_gimbal_s.c.o
+[9.192s] [ 93%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_models_s.c.o
+[9.193s] [ 94%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pb_rm_interfaces/msg/_gimbal_cmd_s.c.o
+[9.321s] [ 95%] Linking C shared library rosidl_generator_py/pb_rm_interfaces/libpb_rm_interfaces__rosidl_generator_py.so
+[9.354s] [ 95%] Built target pb_rm_interfaces__rosidl_generator_py
+[9.371s] [ 96%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[9.373s] [ 97%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o
+[9.373s] [ 97%] Building C object CMakeFiles/pb_rm_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_c.c.o
+[9.460s] [ 98%] Linking C shared library rosidl_generator_py/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.460s] [ 99%] Linking C shared library rosidl_generator_py/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.464s] [100%] Linking C shared library rosidl_generator_py/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.494s] [100%] Built target pb_rm_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[9.495s] [100%] Built target pb_rm_interfaces__rosidl_typesupport_introspection_c__pyext
+[9.497s] [100%] Built target pb_rm_interfaces__rosidl_typesupport_c__pyext
+[9.507s] Invoked command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/pb_rm_interfaces -- -j32 -l32
+[9.508s] Invoking command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/pb_rm_interfaces
+[9.516s] -- Install configuration: ""
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/ament_index/resource_index/rosidl_interfaces/pb_rm_interfaces
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/game_robot_hp.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/gimbal.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/ground_robot_position.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/game_status.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/buff.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rfid_status.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/robot_state_info.h
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.516s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__functions.c
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__type_support.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__struct.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__struct.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__struct.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__functions.c
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__functions.c
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__functions.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__functions.c
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__struct.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__type_support.h
+[9.517s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__struct.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__type_support.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__type_support.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__functions.c
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__functions.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__struct.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__struct.h
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__functions.c
+[9.518s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__functions.c
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__struct.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__type_support.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__type_support.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__type_support.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__struct.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__functions.c
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__type_support.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__functions.h
+[9.519s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__functions.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__functions.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__struct.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__struct.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__functions.c
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__functions.c
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__functions.c
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__functions.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/event_data.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/robot_status.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/gimbal_cmd.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rosidl_generator_c__visibility_control.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/models.h
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/library_path.sh
+[9.520s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/library_path.dsv
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_generator_c.so
+[9.521s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_generator_c.so" to ""
+[9.521s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.521s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.521s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__rosidl_typesupport_fastrtps_c.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[9.521s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_fastrtps_c.so
+[9.521s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[9.522s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.522s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.522s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.c
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__type_support.c
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.c
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__type_support.c
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__type_support.c
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__rosidl_typesupport_introspection_c.h
+[9.522s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__rosidl_typesupport_introspection_c.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__rosidl_typesupport_introspection_c.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__rosidl_typesupport_introspection_c.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__rosidl_typesupport_introspection_c.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__rosidl_typesupport_introspection_c.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__type_support.c
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[9.523s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_introspection_c.so
+[9.523s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_c.so
+[9.524s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_c.so" to ""
+[9.524s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.524s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/buff.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/robot_status.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rfid_status.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/event_data.hpp
+[9.524s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__builder.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__type_support.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__type_support.hpp
+[9.524s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__builder.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__struct.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__traits.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__struct.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__type_support.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__traits.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__struct.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__type_support.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__struct.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__type_support.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__builder.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__struct.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__traits.hpp
+[9.525s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__struct.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__builder.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__type_support.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__traits.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__builder.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__struct.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__struct.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__type_support.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__traits.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__traits.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__struct.hpp
+[9.526s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__traits.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__traits.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__struct.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__builder.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__traits.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__traits.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__struct.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__type_support.hpp
+[9.527s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__traits.hpp
+[9.528s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/game_status.hpp
+[9.529s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/gimbal.hpp
+[9.529s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/robot_state_info.hpp
+[9.529s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/gimbal_cmd.hpp
+[9.529s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/game_robot_hp.hpp
+[9.529s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/ground_robot_position.hpp
+[9.530s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/models.hpp
+[9.530s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.530s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.530s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[9.530s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__rosidl_typesupport_fastrtps_cpp.hpp
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__rosidl_typesupport_fastrtps_cpp.hpp
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_cpp.hpp
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__rosidl_typesupport_fastrtps_cpp.hpp
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__rosidl_typesupport_fastrtps_cpp.hpp
+[9.531s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/dds_fastrtps
+[9.532s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[9.532s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__rosidl_typesupport_fastrtps_cpp.hpp
+[9.532s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__rosidl_typesupport_fastrtps_cpp.hpp
+[9.532s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__rosidl_typesupport_fastrtps_cpp.hpp
+[9.532s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__rosidl_typesupport_fastrtps_cpp.hpp
+[9.533s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__rosidl_typesupport_fastrtps_cpp.hpp
+[9.533s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[9.533s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[9.533s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces
+[9.533s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg
+[9.533s] -- Up-to-date: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail
+[9.533s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/buff__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__rosidl_typesupport_introspection_cpp.hpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/event_data__type_support.cpp
+[9.534s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_status__type_support.cpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_robot_hp__rosidl_typesupport_introspection_cpp.hpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__type_support.cpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal__type_support.cpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/rfid_status__rosidl_typesupport_introspection_cpp.hpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/gimbal_cmd__type_support.cpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/ground_robot_position__type_support.cpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/models__rosidl_typesupport_introspection_cpp.hpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/robot_state_info__rosidl_typesupport_introspection_cpp.hpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/detail/game_status__rosidl_typesupport_introspection_cpp.hpp
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_introspection_cpp.so
+[9.535s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[9.535s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_cpp.so
+[9.536s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_typesupport_cpp.so" to ""
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/pythonpath.sh
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/pythonpath.dsv
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces-1.0.0-py3.10.egg-info
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces-1.0.0-py3.10.egg-info/top_level.txt
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces-1.0.0-py3.10.egg-info/SOURCES.txt
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces-1.0.0-py3.10.egg-info/PKG-INFO
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces-1.0.0-py3.10.egg-info/dependency_links.txt
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/libpb_rm_interfaces__rosidl_generator_py.so
+[9.536s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/__init__.py
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_buff_s.c
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_event_data.py
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_robot_hp.py
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_status_s.c
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_ground_robot_position_s.c
+[9.537s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/__init__.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_models.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_state_info.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_rfid_status_s.c
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_buff.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal_s.c
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_state_info_s.c
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_models_s.c
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_status.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_rfid_status.py
+[9.538s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_robot_hp_s.c
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal_cmd.py
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_ground_robot_position.py
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_status.py
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal.py
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_event_data_s.c
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_status_s.c
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal_cmd_s.c
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.539s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/_pb_rm_interfaces_s.ep.rosidl_typesupport_c.c
+[9.573s] Listing '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces'...
+[9.573s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/__init__.py'...
+[9.573s] Listing '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/__init__.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_buff.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_event_data.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_robot_hp.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_game_status.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_gimbal_cmd.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_ground_robot_position.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_models.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_rfid_status.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_state_info.py'...
+[9.574s] Compiling '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/msg/_robot_status.py'...
+[9.577s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.577s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.577s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.577s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.577s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.577s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages/pb_rm_interfaces/pb_rm_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.578s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_generator_py.so
+[9.578s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib/libpb_rm_interfaces__rosidl_generator_py.so" to ""
+[9.578s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/Buff.idl
+[9.578s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/EventData.idl
+[9.578s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/GameRobotHP.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/GameStatus.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/GroundRobotPosition.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/RfidStatus.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/RobotStatus.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/Gimbal.idl
+[9.579s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/GimbalCmd.idl
+[9.580s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/Models.idl
+[9.580s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/RobotStateInfo.idl
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/Buff.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/EventData.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/GameRobotHP.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/GameStatus.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/GroundRobotPosition.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/RfidStatus.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/referee/RobotStatus.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/Gimbal.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/GimbalCmd.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/Models.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/msg/RobotStateInfo.msg
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/ament_index/resource_index/package_run_dependencies/pb_rm_interfaces
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/ament_index/resource_index/parent_prefix_path/pb_rm_interfaces
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/ament_prefix_path.sh
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/ament_prefix_path.dsv
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/path.sh
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/environment/path.dsv
+[9.581s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/local_setup.bash
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/local_setup.sh
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/local_setup.zsh
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/local_setup.dsv
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/package.dsv
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/ament_index/resource_index/packages/pb_rm_interfaces
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_generator_cExport.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_generator_cExport-noconfig.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_cExport.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_generator_cppExport.cmake
+[9.582s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_cppExport.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_generator_pyExport.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/export_pb_rm_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/rosidl_cmake-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfacesConfig.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake/pb_rm_interfacesConfig-version.cmake
+[9.583s] -- Installing: /home/ats/ats_sentry_ws/install/pb_rm_interfaces/share/pb_rm_interfaces/package.xml
+[9.584s] Invoked command in '/home/ats/ats_sentry_ws/build/pb_rm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/pb_rm_interfaces

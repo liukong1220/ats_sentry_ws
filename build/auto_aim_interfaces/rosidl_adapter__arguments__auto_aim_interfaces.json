@@ -1,0 +1,13 @@
+{
+  "package_name": "auto_aim_interfaces",
+  "non_idl_tuples": [
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/Armor.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/Armors.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/Target.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/DebugLight.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/DebugLights.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/DebugArmor.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/DebugArmors.msg",
+    "/home/ats/ats_sentry_ws/src/interfaces/auto_aim_interfaces:msg/TrackerInfo.msg"
+  ]
+}

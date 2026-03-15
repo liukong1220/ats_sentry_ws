@@ -1,0 +1,3 @@
+standard_robot_pp_ros2::StandardRobotPpRos2Node;lib/libstandard_robot_pp_ros2.so
+standard_robot_pp_ros2::GimbalManagerNode;lib/libstandard_robot_pp_ros2.so
+standard_robot_pp_ros2::RobotDecisionNode;lib/libstandard_robot_pp_ros2.so

@@ -1,0 +1,3 @@
+source;share/pb2025_sentry_behavior/environment/ament_prefix_path.sh
+source;share/pb2025_sentry_behavior/environment/library_path.sh
+source;share/pb2025_sentry_behavior/environment/path.sh

@@ -1,0 +1,70 @@
+[0.012s] Invoking command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/ats/ats_sentry_ws/src/pb2025_robot_description -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/pb2025_robot_description
+[0.080s] -- The C compiler identification is GNU 11.4.0
+[0.140s] -- The CXX compiler identification is GNU 11.4.0
+[0.149s] -- Detecting C compiler ABI info
+[0.237s] -- Detecting C compiler ABI info - done
+[0.246s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.246s] -- Detecting C compile features
+[0.246s] -- Detecting C compile features - done
+[0.249s] -- Detecting CXX compiler ABI info
+[0.342s] -- Detecting CXX compiler ABI info - done
+[0.349s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.349s] -- Detecting CXX compile features
+[0.350s] -- Detecting CXX compile features - done
+[0.353s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.956s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.124s] -- Configuring done
+[1.125s] -- Generating done
+[1.127s] -- Build files have been written to: /home/ats/ats_sentry_ws/build/pb2025_robot_description
+[1.132s] Invoked command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/ats/ats_sentry_ws/src/pb2025_robot_description -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/pb2025_robot_description
+[1.133s] Invoking command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/pb2025_robot_description -- -j32 -l32
+[1.179s] Invoked command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/pb2025_robot_description -- -j32 -l32
+[1.182s] Invoking command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/pb2025_robot_description
+[1.192s] -- Install configuration: ""
+[1.192s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//launch
+[1.192s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//launch/robot_description_launch.py
+[1.193s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//params
+[1.193s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//params/robot_description.yaml
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.sdf
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/meshes
+[1.194s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/meshes/mid360.dae
+[1.201s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.sdf.xmacro
+[1.201s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/mid360/model.config
+[1.202s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera
+[1.202s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.sdf
+[1.202s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/meshes
+[1.202s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/meshes/industrial_camera.dae
+[1.203s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.sdf.xmacro
+[1.203s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/industrial_camera/model.config
+[1.204s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2
+[1.204s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.sdf
+[1.204s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/meshes
+[1.204s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/meshes/rplidar_a2.dae
+[1.207s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.sdf.xmacro
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/models/rplidar_a2/model.config
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/simulation_robot.sdf.xmacro
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/pb2025_sentry_robot.sdf.xmacro
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//resource/xmacro/pb2025_infantry_robot.sdf.xmacro
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//rviz
+[1.208s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description//rviz/visualize_robot.rviz
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/gazebo.dsv
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/package_run_dependencies/pb2025_robot_description
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/parent_prefix_path/pb2025_robot_description
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/ament_prefix_path.sh
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/ament_prefix_path.dsv
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/path.sh
+[1.209s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/environment/path.dsv
+[1.210s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.bash
+[1.210s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.sh
+[1.210s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.zsh
+[1.210s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/local_setup.dsv
+[1.210s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/package.dsv
+[1.211s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/ament_index/resource_index/packages/pb2025_robot_description
+[1.211s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/cmake/pb2025_robot_descriptionConfig.cmake
+[1.211s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/cmake/pb2025_robot_descriptionConfig-version.cmake
+[1.211s] -- Installing: /home/ats/ats_sentry_ws/install/pb2025_robot_description/share/pb2025_robot_description/package.xml
+[1.214s] Invoked command in '/home/ats/ats_sentry_ws/build/pb2025_robot_description' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/pb2025_robot_description

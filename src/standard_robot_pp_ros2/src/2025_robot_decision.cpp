@@ -9,7 +9,8 @@ namespace standard_robot_pp_ros2
       current_goal_handle_(nullptr),
       rmul_goal_point_(),
       params_(),
-      current_feedback_(std::make_shared<NavigateToPose::Feedback>()), 
+      current_feedback_(std::make_shared<NavigateToPose::Feedback>()),
+      last_nav_result_(rclcpp_action::ResultCode::UNKNOWN),
       robot_move_(false)
     {
         RCLCPP_INFO(get_logger(), "Start RobotDecisionNode!");
@@ -146,7 +147,7 @@ namespace standard_robot_pp_ros2
 
 
         // 创建定时器，定期执行决策逻辑        // 创建定时器，定期执行决策逻辑
-        timer_ = create_wall_timer(std::chrono::milliseconds(1000), [this]() {
+        timer_ = create_wall_timer(std::chrono::milliseconds(200), [this]() {
             std::lock_guard<std::mutex> lock(nav_mutex_);  // 添加互斥锁
             try {
                 executeDecisionLogic();
@@ -207,12 +208,27 @@ namespace standard_robot_pp_ros2
             return;
         }
 
-        // 取消当前正在执行的目标（非阻塞方式）
+        geometry_msgs::msg::Point target_point;
+        target_point.x = x;
+        target_point.y = y;
+        target_point.z = z;
+
+        if (isSameGoal(target_point, yaw)) {
+            return;
+        }
+
+        // 只有目标点真正变化时才取消当前目标，避免巡逻过程中不断重置 Nav2
         if (current_goal_handle_) {
             auto future_cancel = nav2_client_->async_cancel_goal(current_goal_handle_);
+            (void)future_cancel;
             RCLCPP_DEBUG(get_logger(), "已发送取消请求");
-            current_goal_handle_.reset();
         }
+        goal_active_ = false;
+        goal_request_pending_ = true;
+        has_goal_target_ = true;
+        current_goal_target_ = target_point;
+        current_goal_yaw_ = yaw;
+        last_nav_result_ = rclcpp_action::ResultCode::UNKNOWN;
 
 
         // 构建动作目标
@@ -233,11 +249,23 @@ namespace standard_robot_pp_ros2
 
         // 目标响应回调
         send_goal_options.goal_response_callback =
-            [this](const GoalHandleNavigate::SharedPtr & goal_handle) {
+            [this, target_point, yaw](const GoalHandleNavigate::SharedPtr & goal_handle) {
+                goal_request_pending_ = false;
                 if (!goal_handle) {
                     RCLCPP_ERROR(get_logger(), "目标被服务器拒绝");
+                    const bool target_still_current =
+                        has_goal_target_ &&
+                        std::fabs(current_goal_target_.x - target_point.x) < 1e-3 &&
+                        std::fabs(current_goal_target_.y - target_point.y) < 1e-3 &&
+                        std::fabs(current_goal_target_.z - target_point.z) < 1e-3 &&
+                        std::fabs(current_goal_yaw_ - yaw) < 1e-3;
+                    if (target_still_current) {
+                        goal_active_ = false;
+                        has_goal_target_ = false;
+                    }
                 } else {
                     current_goal_handle_ = goal_handle;  // 关键修改：存储目标句柄
+                    goal_active_ = true;
                     RCLCPP_INFO(get_logger(), "目标已接受，ID: %s", 
                         rclcpp_action::to_string(goal_handle->get_goal_id()).c_str());
                 }
@@ -250,12 +278,13 @@ namespace standard_robot_pp_ros2
                 const std::shared_ptr<const NavigateToPose::Feedback> feedback) {
                     // current_feedback_ = feedback; // 直接替换指针
                     current_feedback_->current_pose = feedback->current_pose; // 复制数据而非指针
+                    has_navigation_feedback_ = true;
                     RCLCPP_DEBUG(get_logger(), "收到导航反馈");
             };
 
         // 结果回调
         send_goal_options.result_callback =
-            [this](const GoalHandleNavigate::WrappedResult & result) {
+            [this, target_point, yaw](const GoalHandleNavigate::WrappedResult & result) {
                 last_nav_result_ = result.code; // 记录导航结果
                 switch (result.code) {
                     case rclcpp_action::ResultCode::SUCCEEDED:
@@ -271,7 +300,18 @@ namespace standard_robot_pp_ros2
                         RCLCPP_ERROR(get_logger(), "未知导航结果");
                         break;
                 }
-                current_goal_handle_.reset(); // 重置目标句柄
+                const bool target_still_current =
+                    has_goal_target_ &&
+                    std::fabs(current_goal_target_.x - target_point.x) < 1e-3 &&
+                    std::fabs(current_goal_target_.y - target_point.y) < 1e-3 &&
+                    std::fabs(current_goal_target_.z - target_point.z) < 1e-3 &&
+                    std::fabs(current_goal_yaw_ - yaw) < 1e-3;
+                if (target_still_current) {
+                    goal_request_pending_ = false;
+                    goal_active_ = false;
+                    current_goal_handle_.reset(); // 重置目标句柄
+                    has_goal_target_ = false;
+                }
             };
     
         // 异步发送目标
@@ -328,9 +368,8 @@ namespace standard_robot_pp_ros2
         RCLCPP_INFO(get_logger(), "当前血量: %d , 当前弹药: %d, 最大血量: %d", 
          current_hp, projectile_allowance, maximum_hp);
 
-        static size_t current_goal_index = 0;
         const double tolerance = params_.config.path_tolerance; // 定义容差阈值
-        // handleNormalHpBehavior(current_goal_index, tolerance);
+        size_t current_goal_index = current_patrol_index_;
 
         switch(robot_move_) {
             case true:
@@ -528,43 +567,30 @@ namespace standard_robot_pp_ros2
     //     }
     // }
 
-    void RobotDecisionNode::handleNormalHpBehavior(size_t& index, double tolerance) 
+    void RobotDecisionNode::handleNormalHpBehavior(size_t& index, double tolerance)
     
     {
+        (void)index;
         const size_t target_index = current_patrol_index_;
         RCLCPP_INFO(get_logger(), "血量良好 (>250<=400)，执行常规任务");
 
-                // 发送当前目标点
         const auto& target = rmul_goal_point_[target_index];
-        sendNavigationGoal(target.x, target.y, target.z);
-        triggerStopSequence();
-         // 到达目标点后才更新索引
-        if (checkDistance(rmul_goal_point_[target_index], tolerance)) 
-        {
-           
-            // 更新巡逻索引（正向递增->反向递减）
-            current_patrol_index_ += patrol_direction_;
-            // triggerStopSequence();
-            
-            // 边界检查 
-            if (current_patrol_index_ > patrol_max_index_) {
-                patrol_direction_ = -1; // 到达最大索引后反向
-                current_patrol_index_ = patrol_max_index_ - 1;
-            } else if (current_patrol_index_ < patrol_min_index_) {
-                patrol_direction_ = 1;  // 到达最小索引后正向
-                current_patrol_index_ = patrol_min_index_ + 1;
-            }
-
-            RCLCPP_INFO(get_logger(), "更新巡逻索引至: %zu", current_patrol_index_);
-
+        if (checkDistance(target, tolerance) ||
+            last_nav_result_ == rclcpp_action::ResultCode::SUCCEEDED) {
+            advancePatrolIndex();
+            const auto& next_target = rmul_goal_point_[current_patrol_index_];
+            sendNavigationGoal(next_target.x, next_target.y, next_target.z);
+            return;
         }
+
+        sendNavigationGoal(target.x, target.y, target.z);
     }
 
     void RobotDecisionNode::handleLowHpBehavior(double tolerance)
     {
         RCLCPP_INFO(get_logger(), "血量较低 (150<x<250)，寻找最近退防点");
 
-        if (!current_feedback_) {
+        if (!has_navigation_feedback_) {
             RCLCPP_WARN(get_logger(), "等待导航反馈数据...");
             return ;
         }
@@ -580,8 +606,9 @@ namespace standard_robot_pp_ros2
         const auto& target_point = rmul_goal_point_[nearest_index];
         sendNavigationGoal(target_point.x, target_point.y, target_point.z);
 
-        if (checkDistance(target_point, params_.config.path_tolerance)) {
+        if (checkDistance(target_point, tolerance)) {
             RCLCPP_INFO(get_logger(), "已到达退防点[%zu]", nearest_index);
+            triggerStopSequence();
         }
 
         RCLCPP_INFO(get_logger(), "正在前往退防点[%zu] (%.2f, %.2f)", nearest_index, target_point.x, target_point.y);
@@ -600,17 +627,11 @@ namespace standard_robot_pp_ros2
         
         // 发布目标点
         const auto& target = rmul_goal_point_[0];
-        
-
-
-            // 取消当前所有导航目标
-        if (current_goal_handle_) {
-            nav2_client_->async_cancel_goal(current_goal_handle_);
-            RCLCPP_INFO(get_logger(), "取消当前导航目标");
-        }
 
         sendNavigationGoal(target.x, target.y, target.z);
-        triggerStopSequence();
+        if (checkDistance(target, tolerance)) {
+            triggerStopSequence();
+        }
         // 到达检测和停止指令发送
         // if (checkDistance(target, tolerance)) {
         //     // triggerStopSequence();
@@ -625,7 +646,7 @@ namespace standard_robot_pp_ros2
     bool RobotDecisionNode::checkDistance(const geometry_msgs::msg::Point& target, double tolerance)
     {
 
-        if (!current_feedback_) {
+        if (!has_navigation_feedback_) {
             RCLCPP_WARN(get_logger(), "等待导航反馈数据...");
             return false;
         }
@@ -646,7 +667,7 @@ namespace standard_robot_pp_ros2
             return 0;
         }
 
-        if (!current_feedback_) {
+        if (!has_navigation_feedback_) {
             RCLCPP_WARN(get_logger(), "导航反馈异常，返回安全点");
             return 0; // 默认返回索引0的安全点
         }
@@ -678,6 +699,41 @@ namespace standard_robot_pp_ros2
             nearest_index, sqrt(min_distance));
         return nearest_index;
         
+    }
+
+    bool RobotDecisionNode::isSameGoal(const geometry_msgs::msg::Point& target, float yaw) const
+    {
+        if (!has_goal_target_) {
+            return false;
+        }
+
+        constexpr double position_epsilon = 1e-3;
+        constexpr double yaw_epsilon = 1e-3;
+        const bool same_position =
+            std::fabs(current_goal_target_.x - target.x) < position_epsilon &&
+            std::fabs(current_goal_target_.y - target.y) < position_epsilon &&
+            std::fabs(current_goal_target_.z - target.z) < position_epsilon;
+        const bool same_yaw = std::fabs(current_goal_yaw_ - yaw) < yaw_epsilon;
+
+        return same_position && same_yaw && (goal_request_pending_ || goal_active_);
+    }
+
+    void RobotDecisionNode::advancePatrolIndex()
+    {
+        const int next_index = static_cast<int>(current_patrol_index_) + patrol_direction_;
+
+        if (next_index > static_cast<int>(patrol_max_index_)) {
+            patrol_direction_ = -1;
+            current_patrol_index_ = patrol_max_index_ - 1;
+        } else if (next_index < static_cast<int>(patrol_min_index_)) {
+            patrol_direction_ = 1;
+            current_patrol_index_ = patrol_min_index_ + 1;
+        } else {
+            current_patrol_index_ = static_cast<size_t>(next_index);
+        }
+
+        last_nav_result_ = rclcpp_action::ResultCode::UNKNOWN;
+        RCLCPP_INFO(get_logger(), "更新巡逻索引至: %zu", current_patrol_index_);
     }
 
     void RobotDecisionNode::triggerStopSequence()

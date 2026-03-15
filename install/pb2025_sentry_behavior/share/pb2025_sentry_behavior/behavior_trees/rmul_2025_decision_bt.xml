@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="check_game_start_bt">
+    <Fallback>
+      <IsGameStatus expected_game_progress="4"
+                    min_remain_time="0"
+                    max_remain_time="420"
+                    key_port="{@referee_gameStatus}"/>
+      <ForceFailure>
+        <Sequence>
+          <PublishSpinSpeed topic_name="cmd_spin"
+                            spin_speed="0.0"
+                            duration="0.0"/>
+          <PublishTwist topic_name="cmd_vel"
+                        v_x="0.0"
+                        v_y="0.0"
+                        v_yaw="0.0"
+                        duration="0.0"/>
+        </Sequence>
+      </ForceFailure>
+    </Fallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="rmul_2025_decision_bt">
+    <KeepRunningUntilFailure>
+      <ForceSuccess>
+        <ReactiveSequence>
+          <!-- Centralized waypoint configuration (edit here only) -->
+          <Script code="
+            safe_goal := '0.0;0.0;0.0';
+            patrol_waypoints := '4.65;-3.50;0.0|3.20;-2.40;0.0|1.80;-1.20;0.0|3.20;-2.40;0.0';
+            retreat_candidates := '1.00;-0.80;0.0|1.80;-1.40;0.0|2.60;-2.00;0.0'
+          "/>
+
+          <SubTree ID="check_game_start_bt"/>
+
+          <Fallback>
+            <!-- ammo <= 70 -> safe -->
+            <Sequence>
+              <IsRobotStatusInRange key_port="{@referee_robotStatus}"
+                                    ammo_max="70"
+                                    heat_max="350"/>
+              <SendNav2Waypoints action_name="/navigate_through_poses"
+                                 goal="{safe_goal}"/>
+            </Sequence>
+
+            <!-- hp <= 150 -> safe -->
+            <Sequence>
+              <IsRobotStatusInRange key_port="{@referee_robotStatus}"
+                                    ammo_min="71"
+                                    hp_max="150"
+                                    heat_max="350"/>
+              <SendNav2Waypoints action_name="/navigate_through_poses"
+                                 goal="{safe_goal}"/>
+            </Sequence>
+
+            <!-- 150 < hp <= 200 -> nearest retreat -->
+            <Sequence>
+              <IsRobotStatusInRange key_port="{@referee_robotStatus}"
+                                    ammo_min="71"
+                                    hp_min="151"
+                                    hp_max="200"
+                                    heat_max="350"/>
+              <SelectNearestGoal key_port="{@referee_robotStatus}"
+                                 candidates="{retreat_candidates}"
+                                 goal="{selected_retreat_goal}"/>
+              <SendNav2Waypoints action_name="/navigate_through_poses"
+                                 goal="{selected_retreat_goal}"/>
+            </Sequence>
+
+            <!-- hp > 200 -> patrol -->
+            <Sequence>
+              <IsRobotStatusInRange key_port="{@referee_robotStatus}"
+                                    ammo_min="71"
+                                    hp_min="201"
+                                    heat_max="350"/>
+              <SendNav2Waypoints action_name="/navigate_through_poses"
+                                 goals="{patrol_waypoints}"/>
+            </Sequence>
+          </Fallback>
+        </ReactiveSequence>
+      </ForceSuccess>
+    </KeepRunningUntilFailure>
+  </BehaviorTree>
+
+  <TreeNodesModel>
+    <Condition ID="IsRobotStatusInRange">
+      <input_port name="key_port"
+                  default="{@referee_robotStatus}"
+                  type="pb_rm_interfaces::msg::RobotStatus_&lt;std::allocator&lt;void&gt; &gt;">RobotStatus port on blackboard</input_port>
+      <input_port name="hp_min"
+                  default="0"
+                  type="int">Minimum HP threshold</input_port>
+      <input_port name="hp_max"
+                  default="-1"
+                  type="int">Maximum HP threshold, -1 means disabled</input_port>
+      <input_port name="ammo_min"
+                  default="0"
+                  type="int">Minimum ammo threshold</input_port>
+      <input_port name="ammo_max"
+                  default="-1"
+                  type="int">Maximum ammo threshold, -1 means disabled</input_port>
+      <input_port name="heat_max"
+                  default="350"
+                  type="int">Maximum heat threshold</input_port>
+    </Condition>
+
+    <Action ID="SelectNearestGoal">
+      <input_port name="key_port"
+                  default="{@referee_robotStatus}"
+                  type="pb_rm_interfaces::msg::RobotStatus_&lt;std::allocator&lt;void&gt; &gt;">RobotStatus port on blackboard</input_port>
+      <input_port name="candidates"
+                  default="0;0;0|0;0;0"
+                  type="std::vector&lt;geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;">Candidate goals (x;y;yaw|x;y;yaw)</input_port>
+      <output_port name="goal"
+                   default="{selected_goal}"
+                   type="geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt;">Nearest selected goal</output_port>
+    </Action>
+
+    <Action ID="SendNav2Waypoints">
+      <input_port name="goal"
+                  default="0;0;0"
+                  type="geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt;">Single goal fallback</input_port>
+      <input_port name="goals"
+                  default="0;0;0|0;0;0"
+                  type="std::vector&lt;geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;geometry_msgs::msg::PoseStamped_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;">Waypoint list (x;y;yaw|x;y;yaw|...)</input_port>
+      <input_port name="action_name"
+                  type="std::string">Action server name</input_port>
+    </Action>
+  </TreeNodesModel>
+</root>

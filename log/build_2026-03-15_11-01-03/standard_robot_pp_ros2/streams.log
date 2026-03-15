@@ -1,0 +1,112 @@
+[0.016s] Invoking command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/ats/ats_sentry_ws/src/standard_robot_pp_ros2 -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2
+[0.060s] -- The C compiler identification is GNU 11.4.0
+[0.111s] -- The CXX compiler identification is GNU 11.4.0
+[0.117s] -- Detecting C compiler ABI info
+[0.173s] -- Detecting C compiler ABI info - done
+[0.178s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.178s] -- Detecting C compile features
+[0.178s] -- Detecting C compile features - done
+[0.181s] -- Detecting CXX compiler ABI info
+[0.242s] -- Detecting CXX compiler ABI info - done
+[0.248s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.248s] -- Detecting CXX compile features
+[0.248s] -- Detecting CXX compile features - done
+[0.250s] -- Found ament_cmake_auto: 1.3.13 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.684s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.845s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.849s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.855s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.863s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.873s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.918s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.922s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.006s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.030s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.069s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.078s] -- Looking for pthread.h
+[1.140s] -- Looking for pthread.h - found
+[1.140s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.199s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.200s] -- Found Threads: TRUE  
+[1.290s] -- Found ASIO: /usr/include  
+[1.397s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.398s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.398s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.516s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.536s] In this package, headers install destination is set to `include` by ament_auto_package. It is recommended to install `include/standard_robot_pp_ros2` instead and will be the default behavior of ament_auto_package from ROS 2 Kilted Kaiju. On distributions before Kilted, ament_auto_package behaves the same way when you use USE_SCOPED_HEADER_INSTALL_DIR option.
+[1.538s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.539s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.539s] -- Configured cppcheck include dirs: /home/ats/ats_sentry_ws/src/standard_robot_pp_ros2/include
+[1.539s] -- Configured cppcheck exclude dirs and/or files: 
+[1.541s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.541s] -- Configured cpplint exclude dirs and/or files: 
+[1.541s] -- Added test 'lint_cmake' to check CMake code style
+[1.542s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.542s] -- Added test 'xmllint' to check XML markup files
+[1.543s] -- Added test 'clang_format' to check C / C++ code style
+[1.544s] -- Added test 'black' to check Python code style
+[1.546s] -- Configuring done
+[1.574s] -- Generating done
+[1.580s] -- Build files have been written to: /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2
+[1.588s] Invoked command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/ats/ats_sentry_ws/src/standard_robot_pp_ros2 -DCMAKE_INSTALL_PREFIX=/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2
+[1.589s] Invoking command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2 -- -j32 -l32
+[1.636s] [  9%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/crc8_crc16.cpp.o
+[1.636s] [ 27%] Building CXX object CMakeFiles/gimbal_manager_node.dir/rclcpp_components/node_main_gimbal_manager_node.cpp.o
+[1.636s] [ 27%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/gimbal_manager.cpp.o
+[1.636s] [ 36%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o
+[1.637s] [ 45%] Building CXX object CMakeFiles/standard_robot_pp_ros2_node.dir/rclcpp_components/node_main_standard_robot_pp_ros2_node.cpp.o
+[1.637s] [ 54%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/2025_robot_decision.cpp.o
+[1.639s] [ 63%] Building CXX object CMakeFiles/robot_decision_node.dir/rclcpp_components/node_main_robot_decision_node.cpp.o
+[4.190s] [ 72%] Linking CXX executable robot_decision_node
+[4.319s] [ 72%] Built target robot_decision_node
+[4.339s] [ 81%] Linking CXX executable standard_robot_pp_ros2_node
+[4.422s] [ 90%] Linking CXX executable gimbal_manager_node
+[4.453s] [ 90%] Built target standard_robot_pp_ros2_node
+[4.525s] [ 90%] Built target gimbal_manager_node
+[20.357s] [100%] Linking CXX shared library libstandard_robot_pp_ros2.so
+[22.600s] [100%] Built target standard_robot_pp_ros2
+[22.613s] Invoked command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2 -- -j32 -l32
+[22.614s] Invoking command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2
+[22.620s] -- Install configuration: ""
+[22.620s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node
+[22.620s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node" to ""
+[22.620s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/gimbal_manager_node
+[22.621s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/gimbal_manager_node" to ""
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/robot_decision_node
+[22.621s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/robot_decision_node" to ""
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/standard_robot_pp_ros2.hpp
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/packet_typedef.hpp
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/gimbal_manager.hpp
+[22.621s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/crc8_crc16.hpp
+[22.622s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/robot_info.hpp
+[22.622s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/2025_robot_decision.hpp
+[22.622s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.sh
+[22.622s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.dsv
+[22.622s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so
+[22.650s] -- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so" to ""
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/package_run_dependencies/standard_robot_pp_ros2
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/parent_prefix_path/standard_robot_pp_ros2
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.sh
+[22.650s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.dsv
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.sh
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.dsv
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.bash
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.sh
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.zsh
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.dsv
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.dsv
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/packages/standard_robot_pp_ros2
+[22.651s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/rclcpp_components/standard_robot_pp_ros2
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_libraries-extras.cmake
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config.cmake
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config-version.cmake
+[22.652s] -- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.xml
+[22.653s] Invoked command in '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2' returned '0': AMENT_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble LD_LIBRARY_PATH=/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PATH=/home/ats/ats_sentry_ws/install/sdformat_tools/bin:${PATH} PYTHONPATH=/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ats/ats_sentry_ws/build/standard_robot_pp_ros2

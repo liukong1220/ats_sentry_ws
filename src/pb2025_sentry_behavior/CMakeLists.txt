@@ -45,6 +45,12 @@ list(APPEND plugin_libs is_rfid_detected)
 ament_auto_add_library(is_status_ok SHARED plugins/condition/is_status_ok.cpp)
 list(APPEND plugin_libs is_status_ok)
 
+ament_auto_add_library(
+  is_robot_status_in_range SHARED
+  plugins/condition/is_robot_status_in_range.cpp
+)
+list(APPEND plugin_libs is_robot_status_in_range)
+
 ament_auto_add_library(is_attacked SHARED plugins/condition/is_attacked.cpp)
 list(APPEND plugin_libs is_attacked)
 
@@ -54,6 +60,12 @@ list(APPEND plugin_libs is_detect_enemy)
 ####### Actions #######
 ament_auto_add_library(send_nav2_goal SHARED plugins/action/send_nav2_goal.cpp)
 list(APPEND plugin_libs send_nav2_goal)
+
+ament_auto_add_library(send_nav2_waypoints SHARED plugins/action/send_nav2_waypoints.cpp)
+list(APPEND plugin_libs send_nav2_waypoints)
+
+ament_auto_add_library(select_nearest_goal SHARED plugins/action/select_nearest_goal.cpp)
+list(APPEND plugin_libs select_nearest_goal)
 
 ament_auto_add_library(pub_nav2_goal SHARED plugins/action/pub_nav2_goal.cpp)
 list(APPEND plugin_libs pub_nav2_goal)
