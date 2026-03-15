@@ -1,0 +1,34 @@
+# Build artifacts
+build/
+install/
+log/
+
+# Compiled files
+*.so
+*.a
+*.dll
+*.o
+*.obj
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+
+# IDE and editor files
+.vscode/
+.idea/
+.vs/
+.visualstudio/
+*.VC.db
+*.suo
+*.user
+*.sln.docstates
+
+# Temporary and backup files
+*~
+*.swp
+*.swo
+.DS_Store
