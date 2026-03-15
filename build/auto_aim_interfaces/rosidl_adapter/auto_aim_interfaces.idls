@@ -1,8 +1,0 @@
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Armor.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Armors.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Target.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugLight.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugLights.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugArmor.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugArmors.idl
-/home/ats/ats_sentry_ws/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/TrackerInfo.idl

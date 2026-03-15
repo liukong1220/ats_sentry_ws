@@ -561,36 +561,39 @@ namespace standard_robot_pp_ros2
 
         switch(robot_move_) {
             case true:
-                if (projectile_allowance <= 70) 
-                {
-                    sendNavigationGoal(
-                        rmul_goal_point_[0].x,
-                        rmul_goal_point_[0].y,
-                        rmul_goal_point_[0].z);
-                        break;
-                triggerStopSequence();
+                // if (projectile_allowance <= 70) 
+                // {
+                //     sendNavigationGoal(
+                //         rmul_goal_point_[0].x,
+                //         rmul_goal_point_[0].y,
+                //         rmul_goal_point_[0].z);
+                //         break;
+                // triggerStopSequence();
                     
-                }
+                // }
 
-                if(game_status_msg_.stage_remain_time>0 && game_status_msg_.stage_remain_time<=420)
-                 {
-                    if(current_hp>params_.hp.normal.medium&&current_hp <=params_.hp.normal.high)
-                    {
-                        handleNormalHpBehavior(current_goal_index, tolerance);
-                        break;
-                    }
-                    else if(current_hp>params_.hp.normal.low&&current_hp <=params_.hp.normal.medium)
-                    {
-                        handleLowHpBehavior(tolerance);
-                        break;
-                    }
-                    else
-                    {
-                        handleCriticalHpBehavior(tolerance);
-                        break;
-                    }
-                    break;
-                }
+                // if(game_status_msg_.stage_remain_time>0 && game_status_msg_.stage_remain_time<=420)
+                //  {
+                //     if(current_hp>params_.hp.normal.medium&&current_hp <=params_.hp.normal.high)
+                //     {
+                //         handleNormalHpBehavior(current_goal_index, tolerance);
+                //         break;
+                //     }
+                //     else if(current_hp>params_.hp.normal.low&&current_hp <=params_.hp.normal.medium)
+                //     {
+                //         handleLowHpBehavior(tolerance);
+                //         break;
+                //     }
+                //     else
+                //     {
+                //         handleCriticalHpBehavior(tolerance);
+                //         break;
+                //     }
+                //     break;
+                // }
+
+                handleNormalHpBehavior(current_goal_index, tolerance);
+
                 // switch (current_game_state)
                 // {
                 //     case 1: // 时间充足
@@ -986,24 +989,6 @@ namespace standard_robot_pp_ros2
     stop_flag_pub_->publish(stop_msg);
     RCLCPP_INFO(get_logger(), "[Stop] 已发送 stop=true");
 
-    // // 防止计时器重复创建
-    // if (stop_reset_timer_) {
-    //     stop_reset_timer_->cancel();
-    // }
-
-    // // 启动一个一次性定时器，在10秒后发布 stop=false
-    // stop_reset_timer_ = this->create_wall_timer(
-    //     std::chrono::seconds(10),
-    //     [this]() {
-    //         auto stop_msg = std_msgs::msg::Bool();
-    //         stop_msg.data = false;
-    //         stop_flag_pub_->publish(stop_msg);
-    //         RCLCPP_INFO(this->get_logger(), "[Stop] 10秒后发送 stop=false");
-
-    //         // 关闭并释放定时器
-    //         stop_reset_timer_->cancel();
-    //         stop_reset_timer_.reset();
-    //     });
 }
 
     void RobotDecisionNode::logDecisionState(int hp, size_t index)
