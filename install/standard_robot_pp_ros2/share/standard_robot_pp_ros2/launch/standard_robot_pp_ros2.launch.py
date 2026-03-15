@@ -22,7 +22,6 @@ from launch.actions import (
     IncludeLaunchDescription,
     SetEnvironmentVariable,
 )
-from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node, PushRosNamespace, SetRemap
@@ -45,7 +44,6 @@ def generate_launch_description():
     robot_name = LaunchConfiguration("robot_name")
     use_rviz = LaunchConfiguration("use_rviz")
     use_respawn = LaunchConfiguration("use_respawn")
-    enable_robot_decision = LaunchConfiguration("enable_robot_decision")
     log_level = LaunchConfiguration("log_level")
 
     # Create our own temporary YAML files that include substitutions
@@ -97,12 +95,6 @@ def generate_launch_description():
         description="Whether to respawn if a node crashes. Applied when composition is disabled.",
     )
 
-    declare_enable_robot_decision_cmd = DeclareLaunchArgument(
-        "enable_robot_decision",
-        default_value="True",
-        description="Whether to launch robot_decision_node",
-    )
-
     declare_log_level_cmd = DeclareLaunchArgument(
         "log_level", default_value="info", description="log level"
     )
@@ -134,7 +126,6 @@ def generate_launch_description():
                 package="standard_robot_pp_ros2",
                 executable="robot_decision_node",  # 对应构造函数中的节点名称
                 name="robot_decision",
-                condition=IfCondition(enable_robot_decision),
                 output="screen",
                 respawn=use_respawn,
                 respawn_delay=2.0,
@@ -175,7 +166,6 @@ def generate_launch_description():
     ld.add_action(declare_robot_name_cmd)
     ld.add_action(declare_use_rviz_cmd)
     ld.add_action(declare_use_respawn_cmd)
-    ld.add_action(declare_enable_robot_decision_cmd)
     ld.add_action(declare_log_level_cmd)
 
     # Add the actions to launch all of nodes

@@ -1,0 +1,241 @@
+[0.000000] (-) TimerEvent: {}
+[0.000102] (-) JobUnselected: {'identifier': 'armor_detector_opencv'}
+[0.000134] (-) JobUnselected: {'identifier': 'armor_detector_openvino'}
+[0.000161] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000180] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000195] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.000211] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.000226] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.000241] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.000255] (-) JobUnselected: {'identifier': 'hik_camera_ros2_driver'}
+[0.000270] (-) JobUnselected: {'identifier': 'ign_sim_pointcloud_tool'}
+[0.000287] (-) JobUnselected: {'identifier': 'joint_state_publisher'}
+[0.000435] (-) JobUnselected: {'identifier': 'joint_state_publisher_gui'}
+[0.000460] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.000475] (-) JobUnselected: {'identifier': 'loam_interface'}
+[0.000488] (-) JobUnselected: {'identifier': 'pb2025_nav_bringup'}
+[0.000500] (-) JobUnselected: {'identifier': 'pb2025_rm_vision'}
+[0.000512] (-) JobUnselected: {'identifier': 'pb2025_robot_description'}
+[0.000525] (-) JobUnselected: {'identifier': 'pb2025_sentry_behavior'}
+[0.000537] (-) JobUnselected: {'identifier': 'pb2025_sentry_bringup'}
+[0.000550] (-) JobUnselected: {'identifier': 'pb2025_sentry_nav'}
+[0.000640] (-) JobUnselected: {'identifier': 'pb2025_vision_bringup'}
+[0.000662] (-) JobUnselected: {'identifier': 'pb_nav2_plugins'}
+[0.000677] (-) JobUnselected: {'identifier': 'pb_omni_pid_pursuit_controller'}
+[0.000690] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.000703] (-) JobUnselected: {'identifier': 'pb_teleop_twist_joy'}
+[0.000716] (-) JobUnselected: {'identifier': 'pcd2pgm'}
+[0.000730] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.000744] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.000757] (-) JobUnselected: {'identifier': 'projectile_motion'}
+[0.000771] (-) JobUnselected: {'identifier': 'rmoss_base'}
+[0.000786] (-) JobUnselected: {'identifier': 'rmoss_cam'}
+[0.000899] (-) JobUnselected: {'identifier': 'rmoss_core'}
+[0.000958] (-) JobUnselected: {'identifier': 'rmoss_gz_base'}
+[0.000992] (-) JobUnselected: {'identifier': 'rmoss_gz_bridge'}
+[0.001006] (-) JobUnselected: {'identifier': 'rmoss_gz_cam'}
+[0.001021] (-) JobUnselected: {'identifier': 'rmoss_gz_plugins'}
+[0.001035] (-) JobUnselected: {'identifier': 'rmoss_gz_resources'}
+[0.001048] (-) JobUnselected: {'identifier': 'rmoss_interfaces'}
+[0.001063] (-) JobUnselected: {'identifier': 'rmoss_projectile_motion'}
+[0.001076] (-) JobUnselected: {'identifier': 'rmoss_util'}
+[0.001089] (-) JobUnselected: {'identifier': 'rmu_gazebo_simulator'}
+[0.001143] (-) JobUnselected: {'identifier': 'rosbag2_composable_recorder'}
+[0.001158] (-) JobUnselected: {'identifier': 'sdformat_tools'}
+[0.001172] (-) JobUnselected: {'identifier': 'sensor_scan_generation'}
+[0.001186] (-) JobUnselected: {'identifier': 'small_gicp_relocalization'}
+[0.001200] (-) JobUnselected: {'identifier': 'teleop_gimbal_keyboard'}
+[0.001216] (-) JobUnselected: {'identifier': 'terrain_analysis'}
+[0.001229] (-) JobUnselected: {'identifier': 'terrain_analysis_ext'}
+[0.001247] (standard_robot_pp_ros2) JobQueued: {'identifier': 'standard_robot_pp_ros2', 'dependencies': OrderedDict([('auto_aim_interfaces', '/home/ats/ats_sentry_ws/install/auto_aim_interfaces'), ('joint_state_publisher', '/home/ats/ats_sentry_ws/install/joint_state_publisher'), ('pb_rm_interfaces', '/home/ats/ats_sentry_ws/install/pb_rm_interfaces'), ('rmoss_gz_resources', '/home/ats/ats_sentry_ws/install/rmoss_gz_resources'), ('sdformat_tools', '/home/ats/ats_sentry_ws/install/sdformat_tools'), ('pb2025_robot_description', '/home/ats/ats_sentry_ws/install/pb2025_robot_description')])}
+[0.001287] (standard_robot_pp_ros2) JobStarted: {'identifier': 'standard_robot_pp_ros2'}
+[0.019710] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'cmake'}
+[0.021124] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'build'}
+[0.021997] (standard_robot_pp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2', '--', '-j32', '-l32'], 'cwd': '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/ats/ATS_2026_ws'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'ats'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/tcf.json","messagesFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/nls.messages.json","corruptMarkerFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"260f1e75be0cfbabbd36f02f327e4f1d.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/tcf.json","_cacheRoot":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn","_resolvedLanguagePackCoreLocation":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb","_corruptedFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32'), ('HOME', '/home/ats'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/ats/.nvm/versions/node/v24.14.0/bin'), ('NVM_INC', '/home/ats/.nvm/versions/node/v24.14.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-d9bb8536-1.11-main.sock'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '18513'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=5c3770878aca010bf45b2e9369b5fe2f'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/ats/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/ats/ws_livox/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'ats'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('USERNAME', 'ats'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/ats/ats_sentry_ws/install/sdformat_tools/bin:/home/ats/.local/bin:/home/ats/.codex/tmp/arg0/codex-arg0cifPrz:/home/ats/.nvm/versions/node/v24.14.0/bin:/home/ats/.local/bin:/opt/ros/humble/bin:/home/ats/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ats/.vscode/extensions/openai.chatgpt-26.311.21342-linux-x64/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/ats-OMEN-by-HP-Gaming-Laptop-16-wf0xxx:@/tmp/.ICE-unix/18513,unix/ats-OMEN-by-HP-Gaming-Laptop-16-wf0xxx:/tmp/.ICE-unix/18513'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/40af2a39_0f12_400d_8ab5_87a8b2516c32'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.127'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019cf1fb-7254-76e3-86c9-571d99838ada'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2'), ('VSCODE_CLI', '1'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/ats/.config/Code/CachedData/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb'), ('CLUTTER_IM_MODULE', 'fcitx'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=5c3770878aca010bf45b2e9369b5fe2f'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/home/ats/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('VSCODE_PID', '71301'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[0.099542] (-) TimerEvent: {}
+[0.100273] (standard_robot_pp_ros2) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target standard_robot_pp_ros2\n'}
+[0.100731] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 18%] Built target gimbal_manager_node\n'}
+[0.101618] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 36%] Built target standard_robot_pp_ros2_node\n'}
+[0.101746] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 54%] Built target robot_decision_node\n'}
+[0.118138] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 63%] Building CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/2025_robot_decision.cpp.o\n'}
+[0.199763] (-) TimerEvent: {}
+[0.300083] (-) TimerEvent: {}
+[0.400291] (-) TimerEvent: {}
+[0.500526] (-) TimerEvent: {}
+[0.600769] (-) TimerEvent: {}
+[0.700932] (-) TimerEvent: {}
+[0.801112] (-) TimerEvent: {}
+[0.901316] (-) TimerEvent: {}
+[1.001476] (-) TimerEvent: {}
+[1.101681] (-) TimerEvent: {}
+[1.201909] (-) TimerEvent: {}
+[1.302101] (-) TimerEvent: {}
+[1.402325] (-) TimerEvent: {}
+[1.502552] (-) TimerEvent: {}
+[1.602801] (-) TimerEvent: {}
+[1.703130] (-) TimerEvent: {}
+[1.803420] (-) TimerEvent: {}
+[1.903691] (-) TimerEvent: {}
+[2.004047] (-) TimerEvent: {}
+[2.104231] (-) TimerEvent: {}
+[2.204421] (-) TimerEvent: {}
+[2.304636] (-) TimerEvent: {}
+[2.404873] (-) TimerEvent: {}
+[2.505083] (-) TimerEvent: {}
+[2.605267] (-) TimerEvent: {}
+[2.705499] (-) TimerEvent: {}
+[2.805718] (-) TimerEvent: {}
+[2.906047] (-) TimerEvent: {}
+[3.006224] (-) TimerEvent: {}
+[3.106401] (-) TimerEvent: {}
+[3.206735] (-) TimerEvent: {}
+[3.307067] (-) TimerEvent: {}
+[3.407271] (-) TimerEvent: {}
+[3.507459] (-) TimerEvent: {}
+[3.607672] (-) TimerEvent: {}
+[3.707916] (-) TimerEvent: {}
+[3.808085] (-) TimerEvent: {}
+[3.908245] (-) TimerEvent: {}
+[4.008416] (-) TimerEvent: {}
+[4.108611] (-) TimerEvent: {}
+[4.208756] (-) TimerEvent: {}
+[4.308992] (-) TimerEvent: {}
+[4.409171] (-) TimerEvent: {}
+[4.509329] (-) TimerEvent: {}
+[4.609527] (-) TimerEvent: {}
+[4.709676] (-) TimerEvent: {}
+[4.809867] (-) TimerEvent: {}
+[4.910213] (-) TimerEvent: {}
+[5.010414] (-) TimerEvent: {}
+[5.110632] (-) TimerEvent: {}
+[5.210860] (-) TimerEvent: {}
+[5.311109] (-) TimerEvent: {}
+[5.411299] (-) TimerEvent: {}
+[5.511606] (-) TimerEvent: {}
+[5.611803] (-) TimerEvent: {}
+[5.711986] (-) TimerEvent: {}
+[5.812253] (-) TimerEvent: {}
+[5.912495] (-) TimerEvent: {}
+[6.012697] (-) TimerEvent: {}
+[6.113102] (-) TimerEvent: {}
+[6.213258] (-) TimerEvent: {}
+[6.313435] (-) TimerEvent: {}
+[6.413659] (-) TimerEvent: {}
+[6.513955] (-) TimerEvent: {}
+[6.614206] (-) TimerEvent: {}
+[6.714416] (-) TimerEvent: {}
+[6.814639] (-) TimerEvent: {}
+[6.914981] (-) TimerEvent: {}
+[7.015188] (-) TimerEvent: {}
+[7.115385] (-) TimerEvent: {}
+[7.215582] (-) TimerEvent: {}
+[7.315792] (-) TimerEvent: {}
+[7.416031] (-) TimerEvent: {}
+[7.516197] (-) TimerEvent: {}
+[7.616400] (-) TimerEvent: {}
+[7.716571] (-) TimerEvent: {}
+[7.816763] (-) TimerEvent: {}
+[7.916999] (-) TimerEvent: {}
+[8.017409] (-) TimerEvent: {}
+[8.117799] (-) TimerEvent: {}
+[8.218145] (-) TimerEvent: {}
+[8.318514] (-) TimerEvent: {}
+[8.418965] (-) TimerEvent: {}
+[8.519161] (-) TimerEvent: {}
+[8.619360] (-) TimerEvent: {}
+[8.719597] (-) TimerEvent: {}
+[8.819982] (-) TimerEvent: {}
+[8.920199] (-) TimerEvent: {}
+[9.020414] (-) TimerEvent: {}
+[9.120793] (-) TimerEvent: {}
+[9.221153] (-) TimerEvent: {}
+[9.321530] (-) TimerEvent: {}
+[9.421879] (-) TimerEvent: {}
+[9.522100] (-) TimerEvent: {}
+[9.622380] (-) TimerEvent: {}
+[9.722559] (-) TimerEvent: {}
+[9.822919] (-) TimerEvent: {}
+[9.923118] (-) TimerEvent: {}
+[10.023330] (-) TimerEvent: {}
+[10.123747] (-) TimerEvent: {}
+[10.224130] (-) TimerEvent: {}
+[10.324530] (-) TimerEvent: {}
+[10.424894] (-) TimerEvent: {}
+[10.525211] (-) TimerEvent: {}
+[10.625554] (-) TimerEvent: {}
+[10.725877] (-) TimerEvent: {}
+[10.826248] (-) TimerEvent: {}
+[10.926494] (-) TimerEvent: {}
+[10.995117] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 72%] Linking CXX shared library libstandard_robot_pp_ros2.so\n'}
+[11.026593] (-) TimerEvent: {}
+[11.126767] (-) TimerEvent: {}
+[11.226960] (-) TimerEvent: {}
+[11.327194] (-) TimerEvent: {}
+[11.427380] (-) TimerEvent: {}
+[11.527561] (-) TimerEvent: {}
+[11.627762] (-) TimerEvent: {}
+[11.728023] (-) TimerEvent: {}
+[11.828247] (-) TimerEvent: {}
+[11.928499] (-) TimerEvent: {}
+[12.028750] (-) TimerEvent: {}
+[12.128910] (-) TimerEvent: {}
+[12.229080] (-) TimerEvent: {}
+[12.329258] (-) TimerEvent: {}
+[12.429424] (-) TimerEvent: {}
+[12.529623] (-) TimerEvent: {}
+[12.629797] (-) TimerEvent: {}
+[12.729999] (-) TimerEvent: {}
+[12.830200] (-) TimerEvent: {}
+[12.930361] (-) TimerEvent: {}
+[13.030524] (-) TimerEvent: {}
+[13.130916] (-) TimerEvent: {}
+[13.231099] (-) TimerEvent: {}
+[13.296098] (standard_robot_pp_ros2) StdoutLine: {'line': b'[100%] Built target standard_robot_pp_ros2\n'}
+[13.307570] (standard_robot_pp_ros2) CommandEnded: {'returncode': 0}
+[13.308468] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'install'}
+[13.318467] (standard_robot_pp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2'], 'cwd': '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/ats/ATS_2026_ws'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'ats'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/tcf.json","messagesFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/nls.messages.json","corruptMarkerFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"260f1e75be0cfbabbd36f02f327e4f1d.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/tcf.json","_cacheRoot":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn","_resolvedLanguagePackCoreLocation":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb","_corruptedFile":"/home/ats/.config/Code/clp/260f1e75be0cfbabbd36f02f327e4f1d.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ats/ats_sentry_ws/install/pb_rm_interfaces/lib:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/home/ats/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32'), ('HOME', '/home/ats'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/ats/.nvm/versions/node/v24.14.0/bin'), ('NVM_INC', '/home/ats/.nvm/versions/node/v24.14.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-d9bb8536-1.11-main.sock'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '18513'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=5c3770878aca010bf45b2e9369b5fe2f'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/ats/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/ats/ws_livox/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'ats'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('USERNAME', 'ats'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/ats/ats_sentry_ws/install/sdformat_tools/bin:/home/ats/.local/bin:/home/ats/.codex/tmp/arg0/codex-arg0cifPrz:/home/ats/.nvm/versions/node/v24.14.0/bin:/home/ats/.local/bin:/opt/ros/humble/bin:/home/ats/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ats/.vscode/extensions/openai.chatgpt-26.311.21342-linux-x64/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/ats-OMEN-by-HP-Gaming-Laptop-16-wf0xxx:@/tmp/.ICE-unix/18513,unix/ats-OMEN-by-HP-Gaming-Laptop-16-wf0xxx:/tmp/.ICE-unix/18513'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/40af2a39_0f12_400d_8ab5_87a8b2516c32'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.127'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/sdformat_tools:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/joint_state_publisher:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019cf1fb-7254-76e3-86c9-571d99838ada'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/ats/ats_sentry_ws/build/standard_robot_pp_ros2'), ('VSCODE_CLI', '1'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/ats/.config/Code/CachedData/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb'), ('CLUTTER_IM_MODULE', 'fcitx'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=5c3770878aca010bf45b2e9369b5fe2f'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ats/ats_sentry_ws/install/sdformat_tools/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/home/ats/ats_sentry_ws/install/joint_state_publisher/lib/python3.10/site-packages:/home/ats/ats_sentry_ws/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/home/ats/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/home/ats/ats_sentry_ws/install/pb2025_robot_description:/home/ats/ats_sentry_ws/install/rmoss_gz_resources:/home/ats/ats_sentry_ws/install/pb_rm_interfaces:/home/ats/ats_sentry_ws/install/auto_aim_interfaces:/home/ats/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('VSCODE_PID', '71301'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[13.324583] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.331155] (-) TimerEvent: {}
+[13.333656] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node\n'}
+[13.334125] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/gimbal_manager_node\n'}
+[13.334361] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/robot_decision_node\n'}
+[13.334416] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include\n'}
+[13.334467] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2\n'}
+[13.334517] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/standard_robot_pp_ros2.hpp\n'}
+[13.334636] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/packet_typedef.hpp\n'}
+[13.334692] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/gimbal_manager.hpp\n'}
+[13.334744] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/crc8_crc16.hpp\n'}
+[13.334795] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/robot_info.hpp\n'}
+[13.334846] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2/2025_robot_decision.hpp\n'}
+[13.334913] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.sh\n'}
+[13.334967] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/library_path.dsv\n'}
+[13.335031] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so\n'}
+[13.361461] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Set runtime path of "/home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so" to ""\n'}
+[13.361823] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config\n'}
+[13.361984] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml\n'}
+[13.362064] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch\n'}
+[13.362171] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py\n'}
+[13.362285] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/__pycache__\n'}
+[13.362447] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/__pycache__/standard_robot_pp_ros2.launch.cpython-310.pyc\n'}
+[13.362519] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/package_run_dependencies/standard_robot_pp_ros2\n'}
+[13.362589] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/parent_prefix_path/standard_robot_pp_ros2\n'}
+[13.362657] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.sh\n'}
+[13.362726] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.dsv\n'}
+[13.362790] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.sh\n'}
+[13.362854] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.dsv\n'}
+[13.362922] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.bash\n'}
+[13.362985] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.sh\n'}
+[13.363047] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.zsh\n'}
+[13.363111] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.dsv\n'}
+[13.363190] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Installing: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.dsv\n'}
+[13.363276] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/packages/standard_robot_pp_ros2\n'}
+[13.363406] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/ament_index/resource_index/rclcpp_components/standard_robot_pp_ros2\n'}
+[13.363521] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[13.363618] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[13.363686] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[13.363982] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config.cmake\n'}
+[13.364065] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config-version.cmake\n'}
+[13.364138] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/ats/ats_sentry_ws/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.xml\n'}
+[13.364706] (standard_robot_pp_ros2) CommandEnded: {'returncode': 0}
+[13.380907] (standard_robot_pp_ros2) JobEnded: {'identifier': 'standard_robot_pp_ros2', 'rc': 0}
+[13.381396] (-) EventReactorShutdown: {}

@@ -759,8 +759,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/2025_robot_decision.cpp.o: /home/ats/a
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
   /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp \
   /opt/ros/humble/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/navigate_to_pose.hpp \
-  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__struct.hpp \
+  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/navigate_through_poses.hpp \
+  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__struct.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__struct.hpp \
   /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__struct.hpp \
@@ -783,11 +783,11 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/2025_robot_decision.cpp.o: /home/ats/a
   /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__traits.hpp \
   /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__traits.hpp \
   /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__type_support.hpp \
-  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__builder.hpp \
-  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__traits.hpp \
+  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__builder.hpp \
+  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__traits.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp \
-  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__type_support.hpp \
+  /opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__type_support.hpp \
   /opt/ros/humble/include/nav2_msgs/nav2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/action_type_support.hpp \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
@@ -3285,6 +3285,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 
 /usr/include/asio/traits/require_concept_member.hpp:
 
+/usr/include/asio/impl/redirect_error.hpp:
+
 /usr/include/asio/impl/read_until.hpp:
 
 /usr/include/asio/detail/regex_fwd.hpp:
@@ -4493,8 +4495,6 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
-/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__struct.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/context.hpp:
@@ -4576,6 +4576,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__traits.hpp:
+
+/usr/include/c++/11/bits/stl_construct.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/twist.hpp:
 
@@ -4765,6 +4767,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__traits.hpp:
 
+/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__struct.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
 
 /opt/ros/humble/include/rmw/rmw/network_flow_endpoint_array.h:
@@ -4922,6 +4926,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/11/typeindex:
+
+/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__type_support.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -5216,10 +5222,6 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 /usr/include/asio/detail/consuming_buffers.hpp:
 
 /usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/asio/impl/redirect_error.hpp:
-
-/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__traits.hpp:
 
 /home/ats/ats_sentry_ws/install/pb_rm_interfaces/include/pb_rm_interfaces/pb_rm_interfaces/msg/robot_status.hpp:
 
@@ -5673,7 +5675,7 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 
 /opt/ros/humble/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
-/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/navigate_to_pose.hpp:
+/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/navigate_through_poses.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
 
@@ -5725,13 +5727,11 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 
 /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__type_support.hpp:
 
-/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__builder.hpp:
+/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__builder.hpp:
 
-/usr/include/c++/11/bits/stl_construct.h:
+/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_through_poses__traits.hpp:
 
-/opt/ros/humble/include/nav2_msgs/nav2_msgs/action/detail/navigate_to_pose__type_support.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h:
 
@@ -5846,8 +5846,6 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp:
 
@@ -6216,6 +6214,8 @@ CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o: /home/at
 /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:
 
 /usr/include/asm-generic/ioctl.h:
+
+/usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
 
 /usr/include/x86_64-linux-gnu/bits/poll.h:
 

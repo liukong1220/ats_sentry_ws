@@ -57,7 +57,13 @@ robot_decision:
 
     decision_config:
       path_tolerance: 0.2  # 路径执行容差（米）
-      nav2_action_server: "/navigate_to_pose"  # 导航动作服务名称
+      patrol_switch_distance: 0.6  # 提前切换下一个巡逻点的距离（米）
+      patrol_only_mode: true  # true: 只执行巡逻，不再进入低血/补给等分支
+      force_patrol_enable: false  # true: 无视比赛状态也允许巡逻
+      patrol_cycle_limit: 1  # 1: 只跑一圈后停止，0: 无限循环
+      patrol_min_index: 1  # 巡逻起点索引（含）
+      patrol_max_index: 3  # 巡逻终点索引（含）
+      nav2_action_server: "/navigate_through_poses"  # 导航动作服务名称
 
 joint_state_publisher:
   ros__parameters:
@@ -71,5 +77,3 @@ robot_state_publisher:
     use_sim_time: false
     publish_frequency: 200.0
     
-
-

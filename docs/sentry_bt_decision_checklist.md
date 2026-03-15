@@ -65,4 +65,35 @@
   - `target_tree` 为 `rmul_2025_decision_bt`
   - Nav2 action 服务存在：`/navigate_through_poses`
   - 进入不同血量/弹药分支时，日志切换与行为一致
-  - 巡逻点切换无明显停顿
+
+
+
+**怎么运行这个决策**
+
+1. 编译并 source
+
+```
+cd /home/ats/ats_sentry_ws colcon build --packages-select standard_robot_pp_ros2 source install/setup.bash 
+```
+
+1. 启动 Nav2（终端1）
+
+```
+ros2 launch pb2025_nav_bringup rm_navigation_reality_launch.py world:=rmuc slam:=False use_robot_state_pub:=False 
+```
+
+1. 启动决策节点（终端2）
+
+```
+ros2 launch standard_robot_pp_ros2 standard_robot_pp_ros2.launch.py params_file:=/home/ats/ats_sentry_ws/src/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml 
+```
+
+1. 检查动作服务
+
+```
+ros2 action list | grep navigate_through_poses 
+```
+
+------
+
+**一圈 / 无限循环怎么切换**

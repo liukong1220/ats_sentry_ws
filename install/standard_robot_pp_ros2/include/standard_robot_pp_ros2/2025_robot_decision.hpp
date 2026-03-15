@@ -16,7 +16,7 @@
 #include "standard_robot_pp_ros2/2025_robot_decision.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include<cmath>
-#include "nav2_msgs/action/navigate_to_pose.hpp"
+#include "nav2_msgs/action/navigate_through_poses.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp> // 添加tf2转换支持
 #include <std_msgs/msg/bool.hpp>
@@ -34,8 +34,8 @@ public:
 private:
 
     // Action客户端类型定义
-    using NavigateToPose = nav2_msgs::action::NavigateToPose;
-    using GoalHandleNavigate = rclcpp_action::ClientGoalHandle<NavigateToPose>;
+    using NavigateThroughPoses = nav2_msgs::action::NavigateThroughPoses;
+    using GoalHandleNavigate = rclcpp_action::ClientGoalHandle<NavigateThroughPoses>;
 
     // 参数结构体定义
     struct DecisionParams
@@ -63,12 +63,18 @@ private:
 
         struct DecisionConfig {
             double path_tolerance;
+            double patrol_switch_distance;
+            bool patrol_only_mode;
+            bool force_patrol_enable;
+            int patrol_cycle_limit;
+            int patrol_min_index;
+            int patrol_max_index;
             std::string nav2_action_server;  // 新增动作服务名称参数
         } config;
     };
     
     // Action客户端
-    rclcpp_action::Client<NavigateToPose>::SharedPtr nav2_client_;
+    rclcpp_action::Client<NavigateThroughPoses>::SharedPtr nav2_client_;
     GoalHandleNavigate::SharedPtr current_goal_handle_;
 
     //参数存储
@@ -93,7 +99,13 @@ private:
     void handleCriticalHpBehavior(double tolerance);
     size_t findNearestPoint(const geometry_msgs::msg::Point&);
     bool checkDistance(const geometry_msgs::msg::Point&, double);
+    double distanceToTarget(const geometry_msgs::msg::Point&) const;
     bool isSameGoal(const geometry_msgs::msg::Point& target, float yaw) const;
+    bool isSamePatrolSegmentGoal(size_t start_index, size_t end_index) const;
+    size_t computeNextPatrolIndex(size_t start_index, int & direction) const;
+    geometry_msgs::msg::PoseStamped buildPoseStamped(
+        const geometry_msgs::msg::Point& target, float yaw) const;
+    void sendPatrolSegmentGoal(size_t start_index, size_t end_index);
     void advancePatrolIndex();
     void logDecisionState(int hp, size_t index);
     void triggerStopSequence();
@@ -112,14 +124,20 @@ private:
     geometry_msgs::msg::PoseStamped current_pose_; // 机器人当前位置信息
 
     rclcpp::TimerBase::SharedPtr stop_reset_timer_;
-    NavigateToPose::Feedback::SharedPtr current_feedback_;
+    NavigateThroughPoses::Feedback::SharedPtr current_feedback_;
     rclcpp_action::ResultCode last_nav_result_;
     bool has_navigation_feedback_ = false;
     bool goal_request_pending_ = false;
     bool goal_active_ = false;
     bool has_goal_target_ = false;
+    bool has_patrol_segment_target_ = false;
     geometry_msgs::msg::Point current_goal_target_;
     float current_goal_yaw_ = 0.0f;
+    size_t current_patrol_segment_start_ = 0;
+    size_t current_patrol_segment_end_ = 0;
+    int completed_patrol_cycles_ = 0;
+    bool patrol_finished_ = false;
+    bool patrol_finish_stop_sent_ = false;
     bool robot_move_; // 哨兵运动标志位
     rclcpp::TimerBase::SharedPtr timer_;
     // bool rfid_capture_center_ = false; // 中心增益点捕获标志位
