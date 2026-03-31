@@ -15,8 +15,6 @@
 #include "behaviortree_cpp/bt_factory.h"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
-#include <string>
-#include <vector>
 
 #ifndef PB2025_SENTRY_BEHAVIOR__CUSTOM_TYPES_HPP_
 #define PB2025_SENTRY_BEHAVIOR__CUSTOM_TYPES_HPP_
@@ -50,19 +48,6 @@ geometry_msgs::msg::PoseStamped convertFromString(StringView key)
   } else {
     throw RuntimeError("Invalid input");
   }
-}
-
-template <>
-std::vector<geometry_msgs::msg::PoseStamped> convertFromString(StringView key)
-{
-  std::vector<geometry_msgs::msg::PoseStamped> poses;
-  auto pose_tokens = BT::splitString(key, '|');
-  poses.reserve(pose_tokens.size());
-
-  for (const auto & token : pose_tokens) {
-    poses.push_back(convertFromString<geometry_msgs::msg::PoseStamped>(token));
-  }
-  return poses;
 }
 }  // namespace BT
 

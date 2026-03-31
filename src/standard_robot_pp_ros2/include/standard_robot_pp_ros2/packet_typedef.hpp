@@ -377,7 +377,6 @@ struct SendRobotCmdData
       float vy;
       float wz;
       bool stop;
-      // int stop;
     } __attribute__((packed)) speed_vector;
 
     struct

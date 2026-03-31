@@ -95,13 +95,16 @@ void FakeVelTransform::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr
   std::lock_guard<std::mutex> lock(cmd_vel_mutex_);
   const bool is_zero_vel = std::abs(msg->linear.x) < EPSILON && std::abs(msg->linear.y) < EPSILON &&
                            std::abs(msg->angular.z) < EPSILON;
-  if (
-    is_zero_vel ||
-    (rclcpp::Clock().now() - last_controller_activate_time_).seconds() > CONTROLLER_TIMEOUT) {
+  const bool controller_timeout =
+    (rclcpp::Clock().now() - last_controller_activate_time_).seconds() > CONTROLLER_TIMEOUT;
+  if (is_zero_vel || controller_timeout) {
     // If received velocity cannot be synchronized, publish it directly
     auto aft_tf_vel = transformVelocity(msg, current_robot_base_angle_);
     cmd_vel_chassis_pub_->publish(aft_tf_vel);
   } else {
+    // Controller active: publish current command immediately and let sync callback refine it.
+    auto aft_tf_vel = transformVelocity(msg, current_robot_base_angle_);
+    cmd_vel_chassis_pub_->publish(aft_tf_vel);
     latest_cmd_vel_ = msg;
   }
 }

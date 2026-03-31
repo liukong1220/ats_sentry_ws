@@ -51,8 +51,8 @@
             plane_thr: 0.1                                  # 0.05, the threshold for plane criteria, the smaller, the flatter a plane
             match_s: 81.0
             ivox_grid_resolution: 2.0
-            gravity: [4.77358, -0.0784, -8.50052]                         # gravity to be aligned
-            gravity_init: [4.77358, -0.0784, -8.50052]            # [0.0, 9.810, 0.0] # # preknown gravity in the first IMU body frame, use when imu_en is False or start from a non-stationary state
+            gravity: [1.0513121634721756, 9.343395829200745, 3.442443907260895]                         # gravity to be aligned
+            gravity_init: [1.0513121634721756, 9.343395829200745, 3.442443907260895]            # [0.0, 9.810, 0.0] # # preknown gravity in the first IMU body frame, use when imu_en is False or start from a non-stationary state
             extrinsic_T: [ -0.011, -0.02329, 0.04412 ]
             extrinsic_R: [ 1.0, 0.0, 0.0,
                            0.0, 1.0, 0.0,

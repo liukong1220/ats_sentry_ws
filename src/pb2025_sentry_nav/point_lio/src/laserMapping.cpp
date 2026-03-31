@@ -7,6 +7,9 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/transform_listener.h>
+#include <chrono>
+#include <iomanip>
+#include <sstream>
 
 #include <nav_msgs/msg/odometry.hpp>
 #include <nav_msgs/msg/path.hpp>
@@ -730,7 +733,7 @@ int main(int argc, char ** argv)
                   }
                   break;
                 }
-                angvel_avr << imu_last.angular_velocity.x, imu_last.angular_velocity.y,
+angvel_avr << imu_last.angular_velocity.x, imu_last.angular_velocity.y,
                   imu_last.angular_velocity.z;
 
                 acc_avr << imu_last.linear_acceleration.x, imu_last.linear_acceleration.y,
@@ -1031,7 +1034,15 @@ int main(int argc, char ** argv)
   // 1. make sure you have enough memories
   // 2. noted that pcd save will influence the real-time performances
   if (!pcl_wait_save->empty() && pcd_save_en) {
-    string file_name = string("scans.pcd");
+    // 获取当前时间戳作为文件名的一部分
+    auto now = std::chrono::system_clock::now();
+    auto time_t = std::chrono::system_clock::to_time_t(now);
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+    
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&time_t), "%Y%m%d_%H%M%S") << "_" << std::setfill('0') << std::setw(3) << ms.count();
+    
+    string file_name = string("scans_") + ss.str() + string(".pcd");
     string all_points_dir(string(string(ROOT_DIR) + "PCD/") + file_name);
     pcl::PCDWriter pcd_writer;
     pcd_writer.writeBinary(all_points_dir, *pcl_wait_save);

@@ -160,6 +160,8 @@ void OmniPidPursuitController::configure(
 
   transform_tolerance_ = tf2::durationFromSec(transform_tolerance);
   control_duration_ = 1.0 / control_frequency;
+  last_velocity_scaling_factor_ = 0.0;
+  has_last_velocity_scaling_ = false;
 
   local_path_pub_ = node->create_publisher<nav_msgs::msg::Path>("local_plan", 1);
   carrot_pub_ = node->create_publisher<geometry_msgs::msg::PointStamped>("lookahead_point", 1);
@@ -520,6 +522,11 @@ void OmniPidPursuitController::applyCurvatureLimitation(
   const nav_msgs::msg::Path & path, const geometry_msgs::msg::PoseStamped & lookahead_pose,
   double & linear_vel)
 {
+  if (!has_last_velocity_scaling_) {
+    last_velocity_scaling_factor_ = linear_vel;
+    has_last_velocity_scaling_ = true;
+  }
+
   double curvature =
     calculateCurvature(path, lookahead_pose, curvature_forward_dist_, curvature_backward_dist_);
 
@@ -534,11 +541,14 @@ void OmniPidPursuitController::applyCurvatureLimitation(
     }
 
     double target_scaled_vel = linear_vel * reduction_ratio;
+    const double max_delta = max_velocity_scaling_factor_rate_ * control_duration_;
     scaled_linear_vel =
       last_velocity_scaling_factor_ + std::clamp(
                                         target_scaled_vel - last_velocity_scaling_factor_,
-                                        -max_velocity_scaling_factor_rate_ * control_duration_,
-                                        max_velocity_scaling_factor_rate_ * control_duration_);
+                                        -max_delta,
+                                        max_delta);
+  } else {
+    last_velocity_scaling_factor_ = linear_vel;
   }
   scaled_linear_vel = std::max(scaled_linear_vel, 2.0 * min_approach_linear_velocity_);
 

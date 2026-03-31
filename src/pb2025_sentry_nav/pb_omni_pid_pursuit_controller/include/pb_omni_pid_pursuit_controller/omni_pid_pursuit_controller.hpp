@@ -265,7 +265,8 @@ private:
   nav2_costmap_2d::Costmap2D * costmap_;
   rclcpp::Logger logger_{rclcpp::get_logger("OmniPidPursuitController")};
   rclcpp::Clock::SharedPtr clock_;
-  double last_velocity_scaling_factor_;
+  double last_velocity_scaling_factor_{0.0};
+  bool has_last_velocity_scaling_{false};
 
   std::shared_ptr<PID> move_pid_;
   std::shared_ptr<PID> heading_pid_;

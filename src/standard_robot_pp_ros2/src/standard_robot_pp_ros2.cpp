@@ -114,6 +114,7 @@ void StandardRobotPpRos2Node::createSubscription()
   stop_flag_sub_ = this->create_subscription<std_msgs::msg::Bool>(
     "stop_flag", 10,
     [this](const std_msgs::msg::Bool::SharedPtr msg) {
+      std::lock_guard<std::mutex> lock(send_cmd_mutex_);
       send_robot_cmd_data_.data.speed_vector.stop = msg->data;
     });
 
@@ -712,15 +713,18 @@ void StandardRobotPpRos2Node::sendData()
 //   stop_start_time_ = this->now(); // 重置计时器
 // }
 
-  send_robot_cmd_data_.frame_header.sof = SOF_SEND;
-  send_robot_cmd_data_.frame_header.id = ID_ROBOT_CMD;
-  send_robot_cmd_data_.frame_header.len = sizeof(SendRobotCmdData) - 6;
-  send_robot_cmd_data_.data.speed_vector.vx = 0;
-  send_robot_cmd_data_.data.speed_vector.vy = 0;
-  send_robot_cmd_data_.data.speed_vector.wz = 0;
-  // 添加帧头crc8校验                
-  crc8::append_CRC8_check_sum(
-    reinterpret_cast<uint8_t *>(&send_robot_cmd_data_), sizeof(HeaderFrame));
+  {
+    std::lock_guard<std::mutex> lock(send_cmd_mutex_);
+    send_robot_cmd_data_.frame_header.sof = SOF_SEND;
+    send_robot_cmd_data_.frame_header.id = ID_ROBOT_CMD;
+    send_robot_cmd_data_.frame_header.len = sizeof(SendRobotCmdData) - 6;
+    send_robot_cmd_data_.data.speed_vector.vx = 0;
+    send_robot_cmd_data_.data.speed_vector.vy = 0;
+    send_robot_cmd_data_.data.speed_vector.wz = 0;
+    // 添加帧头crc8校验
+    crc8::append_CRC8_check_sum(
+      reinterpret_cast<uint8_t *>(&send_robot_cmd_data_), sizeof(HeaderFrame));
+  }
 
   int retry_count = 0;
 
@@ -732,13 +736,20 @@ void StandardRobotPpRos2Node::sendData()
     }
 
     try {
+      SendRobotCmdData send_packet;
+      {
+        std::lock_guard<std::mutex> lock(send_cmd_mutex_);
+        send_packet = send_robot_cmd_data_;
+      }
+      send_packet.time_stamp = static_cast<uint32_t>(this->now().nanoseconds() / 1000000ULL);
+
       // 整包数据校验
       // 添加数据段crc16校验
       crc16::append_CRC16_check_sum(
-        reinterpret_cast<uint8_t *>(&send_robot_cmd_data_), sizeof(SendRobotCmdData));
+        reinterpret_cast<uint8_t *>(&send_packet), sizeof(SendRobotCmdData));
 
       // 发送数据
-      std::vector<uint8_t> send_data = toVector(send_robot_cmd_data_);
+      std::vector<uint8_t> send_data = toVector(send_packet);
       serial_driver_->port()->send(send_data);
     } catch (const std::exception & ex) {
       RCLCPP_ERROR(get_logger(), "Error sending data: %s", ex.what());
@@ -750,6 +761,7 @@ void StandardRobotPpRos2Node::sendData()
 
 void StandardRobotPpRos2Node::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
+  std::lock_guard<std::mutex> lock(send_cmd_mutex_);
   send_robot_cmd_data_.data.speed_vector.vx = msg->linear.x;
   send_robot_cmd_data_.data.speed_vector.vy = msg->linear.y;
   send_robot_cmd_data_.data.speed_vector.wz = msg->angular.z;
@@ -764,6 +776,7 @@ void StandardRobotPpRos2Node::cmdGimbalJointCallback(
     return;
   }
 
+  std::lock_guard<std::mutex> lock(send_cmd_mutex_);
   for (size_t i = 0; i < msg->name.size(); ++i) {
     if (msg->name[i] == "gimbal_pitch_joint") {
       send_robot_cmd_data_.data.gimbal.pitch = msg->position[i];
@@ -776,11 +789,13 @@ void StandardRobotPpRos2Node::cmdGimbalJointCallback(
 void StandardRobotPpRos2Node::visionTargetCallback(
   const auto_aim_interfaces::msg::Target::SharedPtr msg)
 {
+  std::lock_guard<std::mutex> lock(send_cmd_mutex_);
   send_robot_cmd_data_.data.tracking.tracking = msg->tracking;
 }
 
 void StandardRobotPpRos2Node::cmdShootCallback(const example_interfaces::msg::UInt8::SharedPtr msg)
 {
+  std::lock_guard<std::mutex> lock(send_cmd_mutex_);
   send_robot_cmd_data_.data.shoot.fric_on = true;
   send_robot_cmd_data_.data.shoot.fire = msg->data;
 }

@@ -16,6 +16,7 @@
 #define STANDARD_ROBOT_PP_ROS2__STANDARD_ROBOT_PP_ROS2_HPP_
 
 #include <memory>
+#include <mutex>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -89,6 +90,7 @@ private:
     debug_pub_map_;
 
   SendRobotCmdData send_robot_cmd_data_;
+  std::mutex send_cmd_mutex_;
 
   void getParams();
   void createPublisher();

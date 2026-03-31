@@ -436,9 +436,9 @@ controller_server:
   ros__parameters:
     use_sim_time: false
     odom_topic: odometry
-    controller_frequency: 20.0
+    controller_frequency: 30.0
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
+    min_y_velocity_threshold: 0.001
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     progress_checker_plugins: ["progress_checker"]
@@ -451,13 +451,13 @@ controller_server:
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.15
+      xy_goal_tolerance: 0.20
       yaw_goal_tolerance: 6.28
     FollowPath:
       plugin: "pb_omni_pid_pursuit_controller::OmniPidPursuitController"
-      translation_kp: 3.0
+      translation_kp: 3.8
       translation_ki: 0.1
-      translation_kd: 0.3
+      translation_kd: 0.2
       enable_rotation: false
       rotation_kp: 3.0
       rotation_ki: 0.1
@@ -466,24 +466,24 @@ controller_server:
       min_max_sum_error: 1.0
       lookahead_dist: 2.0
       use_velocity_scaled_lookahead_dist: true
-      lookahead_time: 1.0
-      min_lookahead_dist: 0.5
-      max_lookahead_dist: 1.0
+      lookahead_time: 0.7
+      min_lookahead_dist: 0.4
+      max_lookahead_dist: 1.4
       use_interpolation: false
       use_rotate_to_heading: false
       use_rotate_to_heading_treshold: 0.1
-      min_approach_linear_velocity: 0.5
-      approach_velocity_scaling_dist: 1.0
-      v_linear_min: -2.5
-      v_linear_max: 2.5
-      v_angular_min: -3.0
-      v_angular_max: 3.0
-      curvature_min: 0.4                                # 低曲率阈值，低于此值不减速。
-      curvature_max: 0.7                                # 高曲率阈值，高于此值大幅减速。
-      reduction_ratio_at_high_curvature: 0.5            # 高曲率时的速度降低比例。 0.5 (即减速 50%)
+      min_approach_linear_velocity: 0.8
+      approach_velocity_scaling_dist: 0.5
+      v_linear_min: -5.2
+      v_linear_max: 6.2
+      v_angular_min: -7.5
+      v_angular_max: 7.5
+      curvature_min: 4.0                                # 低曲率阈值，低于此值不减速。
+      curvature_max: 8.0                                # 高曲率阈值，高于此值大幅减速。
+      reduction_ratio_at_high_curvature: 0.65            # 高曲率时的速度降低比例。0.7 (即减速 30%)
       curvature_forward_dist: 0.7                       # 前向距离，用于曲率计算
       curvature_backward_dist: 0.3                      # 后向距离，用于曲率计算
-      max_velocity_scaling_factor_rate: 0.9             # 速度缩放因子的最大变化率
+      max_velocity_scaling_factor_rate: 4.0             # 速度缩放因子的最大变化率
 
 local_costmap:
   local_costmap:
@@ -689,13 +689,13 @@ waypoint_follower:
 velocity_smoother:
   ros__parameters:
     use_sim_time: false
-    smoothing_frequency: 20.0
+    smoothing_frequency: 30.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [2.5, 2.5, 3.0]
-    min_velocity: [-2.5, -2.5, -3.0]
-    max_accel: [4.5, 4.5, 5.0]
-    max_decel: [-4.5, -4.5, -5.0]
+    max_velocity: [3.2, 3.2, 3.5]
+    min_velocity: [-3.2, -3.2, -3.5]
+    max_accel: [6.5, 6.5, 7.0]
+    max_decel: [-6.5, -6.5, -7.0]
     odom_topic: "odometry"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
