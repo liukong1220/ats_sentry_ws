@@ -1,24 +1,8 @@
-// Copyright 2025 Lihan Chen
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 #include "pb2025_sentry_behavior/pb2025_sentry_behavior_server.hpp"
 
 #include <filesystem>
 #include <fstream>
 
-#include "auto_aim_interfaces/msg/armors.hpp"
-#include "auto_aim_interfaces/msg/target.hpp"
 #include "behaviortree_cpp/xml_parsing.h"
 #include "nav_msgs/msg/occupancy_grid.hpp"
 #include "pb_rm_interfaces/msg/buff.hpp"
@@ -45,7 +29,13 @@ SentryBehaviorServer::SentryBehaviorServer(const rclcpp::NodeOptions & options)
 : TreeExecutionServer(options)
 {
   node()->declare_parameter("use_cout_logger", false);
+  node()->declare_parameter("export_tree_models_on_shutdown", false);
+  node()->declare_parameter(
+    "tree_models_output_path",
+    (std::filesystem::path(ROOT_DIR) / "behavior_trees" / "models.xml").string());
   node()->get_parameter("use_cout_logger", use_cout_logger_);
+  node()->get_parameter("export_tree_models_on_shutdown", export_tree_models_on_shutdown_);
+  node()->get_parameter("tree_models_output_path", tree_models_output_path_);
 
   subscribe<pb_rm_interfaces::msg::EventData>("referee/event_data", "referee_eventData");
   subscribe<pb_rm_interfaces::msg::GameRobotHP>("referee/all_robot_hp", "referee_allRobotHP");
@@ -55,11 +45,6 @@ SentryBehaviorServer::SentryBehaviorServer(const rclcpp::NodeOptions & options)
   subscribe<pb_rm_interfaces::msg::RfidStatus>("referee/rfid_status", "referee_rfidStatus");
   subscribe<pb_rm_interfaces::msg::RobotStatus>("referee/robot_status", "referee_robotStatus");
   subscribe<pb_rm_interfaces::msg::Buff>("referee/buff", "referee_buff");
-
-  auto detector_qos = rclcpp::SensorDataQoS();
-  subscribe<auto_aim_interfaces::msg::Armors>("detector/armors", "detector_armors", detector_qos);
-  auto tracker_qos = rclcpp::SensorDataQoS();
-  subscribe<auto_aim_interfaces::msg::Target>("tracker/target", "tracker_target", tracker_qos);
 
   auto costmap_qos = rclcpp::QoS(rclcpp::KeepLast(1)).transient_local().reliable();
   subscribe<nav_msgs::msg::OccupancyGrid>(
@@ -119,14 +104,20 @@ int main(int argc, char * argv[])
   exec.spin();
   exec.remove_node(action_server->node());
 
-  // Groot2 editor requires a model of your registered Nodes.
-  // You don't need to write that by hand, it can be automatically
-  // generated using the following command.
-  std::string xml_models = BT::writeTreeNodesModelXML(action_server->factory());
-
-  // Save the XML models to a file
-  std::ofstream file(std::filesystem::path(ROOT_DIR) / "behavior_trees" / "models.xml");
-  file << xml_models;
+  if (action_server->shouldExportTreeModels()) {
+    std::string xml_models = BT::writeTreeNodesModelXML(action_server->factory());
+    std::ofstream file(action_server->treeModelsOutputPath());
+    if (file.is_open()) {
+      file << xml_models;
+      RCLCPP_INFO(
+        action_server->node()->get_logger(), "BehaviorTree models exported to %s",
+        action_server->treeModelsOutputPath().c_str());
+    } else {
+      RCLCPP_WARN(
+        action_server->node()->get_logger(), "Failed to export BehaviorTree models to %s",
+        action_server->treeModelsOutputPath().c_str());
+    }
+  }
 
   rclcpp::shutdown();
 }

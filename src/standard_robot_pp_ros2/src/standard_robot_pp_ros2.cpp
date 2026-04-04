@@ -1,16 +1,4 @@
-// Copyright 2025 SMBU-PolarBear-Robotics-Team
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+ 
 
 #include "standard_robot_pp_ros2/standard_robot_pp_ros2.hpp"
 
@@ -33,8 +21,6 @@ StandardRobotPpRos2Node::StandardRobotPpRos2Node(const rclcpp::NodeOptions & opt
 : Node("StandardRobotPpRos2Node", options),
   owned_ctx_{new IoContext(2)},
   serial_driver_{new drivers::serial_driver::SerialDriver(*owned_ctx_)}
-  // stop_start_time_(this->now())
-  
 {
   RCLCPP_INFO(get_logger(), "Start StandardRobotPpRos2Node!");
 
@@ -110,19 +96,11 @@ void StandardRobotPpRos2Node::createNewDebugPublisher(const std::string & name)
 
 void StandardRobotPpRos2Node::createSubscription()
 {
-
   stop_flag_sub_ = this->create_subscription<std_msgs::msg::Bool>(
-    "stop_flag", 10,
-    [this](const std_msgs::msg::Bool::SharedPtr msg) {
+    "stop_flag", 10, [this](const std_msgs::msg::Bool::SharedPtr msg) {
       std::lock_guard<std::mutex> lock(send_cmd_mutex_);
       send_robot_cmd_data_.data.speed_vector.stop = msg->data;
     });
-
-  //stop_flag_sub_ = this->create_subscription<std_msgs::msg::Bool>(
-  // "stop_flag", 10,
-  // [this](const std_msgs::msg::Bool::SharedPtr msg) {
-  //   send_robot_cmd_data_.data.speed_vector.stop = msg->data ? 1 : 0; // 显式转换
-  // });
 
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
     "/cmd_vel", 10,
@@ -135,9 +113,6 @@ void StandardRobotPpRos2Node::createSubscription()
   cmd_shoot_sub_ = this->create_subscription<example_interfaces::msg::UInt8>(
     "cmd_shoot", 10,
     std::bind(&StandardRobotPpRos2Node::cmdShootCallback, this, std::placeholders::_1));
-  cmd_tracking_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
-    "tracker/target", 10,
-    std::bind(&StandardRobotPpRos2Node::visionTargetCallback, this, std::placeholders::_1));
 }
 
 void StandardRobotPpRos2Node::getParams()
@@ -301,7 +276,6 @@ void StandardRobotPpRos2Node::receiveData()
 
       if (sof[0] != SOF_RECEIVE) {
         sof_count++;
-        //RCLCPP_INFO(get_logger(), "Find sof, cnt=%d", sof_count);
         continue;
       }
 
@@ -372,7 +346,6 @@ void StandardRobotPpRos2Node::receiveData()
           publishEventData(event_data);
         } break;
         case ID_PID_DEBUG: {
-          //RCLCPP_WARN(get_logger(), "Not implemented yet!");
         } break;
         case ID_ALL_ROBOT_HP: {
           ReceiveAllRobotHpData all_robot_hp_data = fromVector<ReceiveAllRobotHpData>(data_buf);
@@ -659,8 +632,8 @@ void StandardRobotPpRos2Node::publishRobotStatus(ReceiveRobotStatus & robot_stat
   msg.remaining_gold_coin = robot_status.data.remaining_gold_coin;
 
   RCLCPP_INFO(get_logger(), "current robot id: %hhu, current hp: %d", msg.robot_id, msg.current_hp);
-  RCLCPP_INFO(get_logger(), "current maximum hp: %d" , msg.maximum_hp);
-  RCLCPP_INFO(get_logger(), "projectile allowance 17mm: %d" , msg.projectile_allowance_17mm);
+  RCLCPP_INFO(get_logger(), "current maximum hp: %d", msg.maximum_hp);
+  RCLCPP_INFO(get_logger(), "projectile allowance 17mm: %d", msg.projectile_allowance_17mm);
 
   if (last_hp_ - msg.current_hp > 0) {
     msg.is_hp_deduced = true;
@@ -706,12 +679,12 @@ void StandardRobotPpRos2Node::sendData()
 {
   RCLCPP_INFO(get_logger(), "Start sendData!");
 
-//   if ((this->now() - stop_start_time_).seconds() > 10.0) { // 2秒后自动重置
-//     send_robot_cmd_data_.data.speed_vector.stop = false;
-//   }
-//   else {
-//   stop_start_time_ = this->now(); // 重置计时器
-// }
+  //   if ((this->now() - stop_start_time_).seconds() > 10.0) { // 2秒后自动重置
+  //     send_robot_cmd_data_.data.speed_vector.stop = false;
+  //   }
+  //   else {
+  //   stop_start_time_ = this->now(); // 重置计时器
+  // }
 
   {
     std::lock_guard<std::mutex> lock(send_cmd_mutex_);
@@ -784,13 +757,6 @@ void StandardRobotPpRos2Node::cmdGimbalJointCallback(
       send_robot_cmd_data_.data.gimbal.yaw = msg->position[i];
     }
   }
-}
-
-void StandardRobotPpRos2Node::visionTargetCallback(
-  const auto_aim_interfaces::msg::Target::SharedPtr msg)
-{
-  std::lock_guard<std::mutex> lock(send_cmd_mutex_);
-  send_robot_cmd_data_.data.tracking.tracking = msg->tracking;
 }
 
 void StandardRobotPpRos2Node::cmdShootCallback(const example_interfaces::msg::UInt8::SharedPtr msg)

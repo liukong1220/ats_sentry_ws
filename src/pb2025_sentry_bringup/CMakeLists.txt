@@ -19,3 +19,9 @@ ament_auto_package(
   pcd
   rviz
 )
+
+install(
+  PROGRAMS
+  scripts/fake_decision_sim_inputs.py
+  DESTINATION lib/${PROJECT_NAME}
+)

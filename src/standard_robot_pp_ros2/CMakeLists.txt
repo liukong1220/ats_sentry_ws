@@ -25,8 +25,8 @@ ament_auto_find_build_dependencies()
 ament_auto_add_library(${PROJECT_NAME} SHARED
   DIRECTORY src
 )
-ament_auto_find_build_dependencies(REQUIRED 
-  nav2_msgs 
+ament_auto_find_build_dependencies(REQUIRED
+  nav2_msgs
   rclcpp_action
   tf2_geometry_msgs
 )

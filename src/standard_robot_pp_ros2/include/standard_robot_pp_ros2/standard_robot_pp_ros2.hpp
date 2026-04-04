@@ -1,16 +1,4 @@
-// Copyright 2025 SMBU-PolarBear-Robotics-Team
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+ 
 
 #ifndef STANDARD_ROBOT_PP_ROS2__STANDARD_ROBOT_PP_ROS2_HPP_
 #define STANDARD_ROBOT_PP_ROS2__STANDARD_ROBOT_PP_ROS2_HPP_
@@ -21,7 +9,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include "auto_aim_interfaces/msg/target.hpp"
 #include "example_interfaces/msg/float64.hpp"
 #include "example_interfaces/msg/u_int8.hpp"
 #include "geometry_msgs/msg/twist.hpp"
@@ -39,7 +26,7 @@
 #include "serial_driver/serial_driver.hpp"
 #include "standard_robot_pp_ros2/packet_typedef.hpp"
 #include "standard_robot_pp_ros2/robot_info.hpp"
-#include <std_msgs/msg/bool.hpp>
+#include "std_msgs/msg/bool.hpp"
 
 namespace standard_robot_pp_ros2
 {
@@ -83,13 +70,11 @@ private:
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr stop_flag_sub_;
   rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr cmd_gimbal_joint_sub_;
   rclcpp::Subscription<example_interfaces::msg::UInt8>::SharedPtr cmd_shoot_sub_;
-  rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr cmd_tracking_sub_;
-
   RobotModels robot_models_;
   std::unordered_map<std::string, rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr>
     debug_pub_map_;
 
-  SendRobotCmdData send_robot_cmd_data_;
+  SendRobotCmdData send_robot_cmd_data_{};
   std::mutex send_cmd_mutex_;
 
   void getParams();
@@ -116,8 +101,6 @@ private:
   void cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
   void cmdGimbalJointCallback(const sensor_msgs::msg::JointState::SharedPtr msg);
   void cmdShootCallback(const example_interfaces::msg::UInt8::SharedPtr msg);
-  void visionTargetCallback(const auto_aim_interfaces::msg::Target::SharedPtr msg);
-
   void setParam(const rclcpp::Parameter & param);
   bool getDetectColor(uint8_t robot_id, uint8_t & color);
   bool callTriggerService(const std::string & service_name);

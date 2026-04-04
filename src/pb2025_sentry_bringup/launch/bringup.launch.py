@@ -1,16 +1,3 @@
-# Copyright 2025 Lihan Chen
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 import os
 
@@ -34,16 +21,12 @@ def generate_launch_description():
     bringup_dir = get_package_share_directory("pb2025_sentry_bringup")
 
     serial_bringup_dir = get_package_share_directory("standard_robot_pp_ros2")
-    vision_bringup_dir = get_package_share_directory("pb2025_vision_bringup")
     navigation_bringup_dir = get_package_share_directory("pb2025_nav_bringup")
     bt_bringup_dir = get_package_share_directory("pb2025_sentry_behavior")
 
     # Create the launch configuration variables
     ## Serial
     robot_name = LaunchConfiguration("robot_name")
-    ## Vision
-    detector = LaunchConfiguration("detector")
-    use_hik_camera = LaunchConfiguration("use_hik_camera")
     ## Navigation
     slam = LaunchConfiguration("slam")
     world = LaunchConfiguration("world")
@@ -80,18 +63,6 @@ def generate_launch_description():
         "robot_name",
         default_value="pb2025_sentry_robot",
         description="The file name of the robot xmacro to be used",
-    )
-
-    declare_detector_cmd = DeclareLaunchArgument(
-        "detector",
-        default_value="opencv",
-        description="Type of detector to use (option: 'opencv', 'openvino')",
-    )
-
-    declare_use_hik_camera_cmd = DeclareLaunchArgument(
-        "use_hik_camera",
-        default_value="True",
-        description="Whether to bringup hik camera node",
     )
 
     declare_slam_cmd = DeclareLaunchArgument(
@@ -192,24 +163,6 @@ def generate_launch_description():
         }.items(),
     )
 
-    start_vision_launch_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(vision_bringup_dir, "launch", "rm_vision_reality_launch.py")
-        ),
-        launch_arguments={
-            "detector": detector,
-            "use_hik_camera": use_hik_camera,
-            "namespace": namespace,
-            "use_sim_time": use_sim_time,
-            "params_file": params_file,
-            "use_robot_state_pub": use_robot_state_pub,
-            "use_composition": use_composition,
-            "use_rviz": "False",
-            "use_respawn": use_respawn,
-            "log_level": log_level,
-        }.items(),
-    )
-
     start_navigation_launch_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -274,8 +227,6 @@ def generate_launch_description():
 
     # Declare the launch options
     ld.add_action(declare_robot_name_cmd)
-    ld.add_action(declare_detector_cmd)
-    ld.add_action(declare_use_hik_camera_cmd)
     ld.add_action(declare_slam_cmd)
     ld.add_action(declare_world_cmd)
     ld.add_action(declare_map_yaml_cmd)
@@ -293,7 +244,6 @@ def generate_launch_description():
     # Add the actions to launch all of the navigation nodes
     ld.add_action(start_rviz_cmd)
     ld.add_action(start_serial_driver_cmd)
-    ld.add_action(start_vision_launch_cmd)
     ld.add_action(start_navigation_launch_cmd)
     ld.add_action(start_behavior_launch_cmd)
     ld.add_action(record_rosbag_cmd)

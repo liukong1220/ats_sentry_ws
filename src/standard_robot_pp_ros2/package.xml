@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>standard_robot_pp_ros2</name>
   <version>0.1.0</version>
@@ -24,7 +23,6 @@
   <depend>std_srvs</depend>
   <depend>example_interfaces</depend>
   <depend>pb_rm_interfaces</depend>
-  <depend>auto_aim_interfaces</depend>
   <depend>nav2_msgs</depend>
   <depend>rclcpp_action</depend>
   <depend>std_msgs</depend>
