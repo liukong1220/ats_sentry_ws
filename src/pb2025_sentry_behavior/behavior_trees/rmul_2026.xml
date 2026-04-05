@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="check_game_start">
+    <Fallback>
+      <IsGameStatus name="IsGameStart"
+                    max_remain_time="420"
+                    min_remain_time="0"
+                    expected_game_progress="4"
+                    key_port="{@referee_gameStatus}"/>
+      <ForceFailure>
+        <Sequence>
+          <PublishSpinSpeed spin_speed="0.0"
+                            duration="0.0"
+                            topic_name="cmd_spin"/>
+          <PublishTwist v_y="0.0"
+                        v_yaw="0.0"
+                        v_x="0.0"
+                        duration="0.0"
+                        topic_name="cmd_vel"/>
+        </Sequence>
+      </ForceFailure>
+    </Fallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="rmul_2026">
+    <KeepRunningUntilFailure>
+      <ForceSuccess>
+        <ReactiveSequence>
+          <SubTree ID="check_game_start"/>
+          <PublishSpinSpeed spin_speed="7.0"
+                            duration="0.0"
+                            topic_name="cmd_spin"/>
+          <ReactiveFallback>
+            <Sequence>
+              <IsHpBand band="critical"/>
+              <ResetLowHpTarget/>
+              <SelectFixedPath target_index="{decision_supply_safe_point_index}"
+                               path="{decision_path}"/>
+              <Fallback>
+                <Sequence>
+                  <IsPathGoalReached path="{decision_path}"
+                                     current_pose="{decision_current_pose}"/>
+                </Sequence>
+                <Sequence>
+                  <SelectPathGoalPose path="{decision_path}"
+                                      goal="{decision_goal_pose}"/>
+                  <PublishDecisionGoal goal="{decision_goal_pose}"
+                                       topic_name="goal_pose"/>
+                </Sequence>
+              </Fallback>
+            </Sequence>
+
+            <Sequence>
+              <IsHpBand band="low"/>
+              <SelectNearestRetreatPath current_pose="{decision_current_pose}"
+                                        selected_index="{decision_low_hp_target_index}"
+                                        path="{decision_path}"/>
+              <Fallback>
+                <Sequence>
+                  <IsPathGoalReached path="{decision_path}"
+                                     current_pose="{decision_current_pose}"/>
+                  <ResetLowHpTarget selected_index="{decision_low_hp_target_index}"/>
+                </Sequence>
+                <Sequence>
+                  <SelectPathGoalPose path="{decision_path}"
+                                      goal="{decision_goal_pose}"/>
+                  <PublishDecisionGoal goal="{decision_goal_pose}"
+                                       topic_name="goal_pose"/>
+                </Sequence>
+              </Fallback>
+            </Sequence>
+
+            <Sequence>
+              <IsGameTimeStage stage="critical"/>
+              <IsHpBand band="normal"/>
+              <ResetLowHpTarget/>
+              <SelectFixedPath target_index="{decision_critical_time_target_index}"
+                               path="{decision_path}"/>
+              <Fallback>
+                <Sequence>
+                  <IsPathGoalReached path="{decision_path}"
+                                     current_pose="{decision_current_pose}"/>
+                </Sequence>
+                <Sequence>
+                  <SelectPathGoalPose path="{decision_path}"
+                                      goal="{decision_goal_pose}"/>
+                  <PublishDecisionGoal goal="{decision_goal_pose}"
+                                       topic_name="goal_pose"/>
+                </Sequence>
+              </Fallback>
+            </Sequence>
+
+            <Sequence>
+              <IsHpBand band="normal"/>
+              <ResetLowHpTarget/>
+              <SelectPatrolPath patrol_cursor="{decision_patrol_cursor}"
+                                patrol_direction="{decision_patrol_direction}"
+                                path="{decision_path}"
+                                next_cursor="{decision_next_patrol_cursor}"
+                                next_direction="{decision_next_patrol_direction}"/>
+              <Fallback>
+                <Sequence>
+                  <IsPathGoalReached path="{decision_path}"
+                                     current_pose="{decision_current_pose}"/>
+                  <AdvancePatrolCursor next_cursor="{decision_next_patrol_cursor}"
+                                       next_direction="{decision_next_patrol_direction}"
+                                       patrol_cursor="{decision_patrol_cursor}"
+                                       patrol_direction="{decision_patrol_direction}"/>
+                </Sequence>
+                <Sequence>
+                  <SelectPathGoalPose path="{decision_path}"
+                                      goal="{decision_goal_pose}"/>
+                  <PublishDecisionGoal goal="{decision_goal_pose}"
+                                       topic_name="goal_pose"/>
+                </Sequence>
+              </Fallback>
+            </Sequence>
+          </ReactiveFallback>
+        </ReactiveSequence>
+      </ForceSuccess>
+    </KeepRunningUntilFailure>
+  </BehaviorTree>
+</root>

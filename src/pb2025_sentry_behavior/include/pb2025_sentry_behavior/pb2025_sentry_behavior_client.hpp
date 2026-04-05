@@ -23,6 +23,8 @@ public:
 
 private:
   void sendGoal();
+  void scheduleRetry();
+  void goalResponseCallback(GoalHandleBTExecuateTree::SharedPtr goal_handle);
   void resultCallback(const GoalHandleBTExecuateTree::WrappedResult & result);
   void feedbackCallback(
     GoalHandleBTExecuateTree::SharedPtr goal_handle,
@@ -31,6 +33,8 @@ private:
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp_action::Client<BTExecuteTree>::SharedPtr action_client_;
   std::string target_tree_;
+  bool goal_sent_ = false;
+  bool goal_active_ = false;
 };
 
 }  // namespace pb2025_sentry_behavior

@@ -9,6 +9,7 @@ from launch.actions import (
     IncludeLaunchDescription,
     SetEnvironmentVariable,
 )
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node, PushRosNamespace, SetRemap
@@ -30,6 +31,7 @@ def generate_launch_description():
     params_file = LaunchConfiguration("params_file")
     robot_name = LaunchConfiguration("robot_name")
     use_rviz = LaunchConfiguration("use_rviz")
+    launch_robot_decision = LaunchConfiguration("launch_robot_decision")
     use_respawn = LaunchConfiguration("use_respawn")
     log_level = LaunchConfiguration("log_level")
 
@@ -76,6 +78,12 @@ def generate_launch_description():
         "use_rviz", default_value="False", description="Whether to start RViz"
     )
 
+    declare_launch_robot_decision_cmd = DeclareLaunchArgument(
+        "launch_robot_decision",
+        default_value="True",
+        description="Whether to start the legacy robot_decision node",
+    )
+
     declare_use_respawn_cmd = DeclareLaunchArgument(
         "use_respawn",
         default_value="True",
@@ -114,6 +122,7 @@ def generate_launch_description():
                 executable="robot_decision_node",  # 对应构造函数中的节点名称
                 name="robot_decision",
                 output="screen",
+                condition=IfCondition(launch_robot_decision),
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
@@ -152,6 +161,7 @@ def generate_launch_description():
     ld.add_action(declare_params_file_cmd)
     ld.add_action(declare_robot_name_cmd)
     ld.add_action(declare_use_rviz_cmd)
+    ld.add_action(declare_launch_robot_decision_cmd)
     ld.add_action(declare_use_respawn_cmd)
     ld.add_action(declare_log_level_cmd)
 

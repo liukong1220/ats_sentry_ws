@@ -4,7 +4,9 @@
 #include <fstream>
 
 #include "behaviortree_cpp/xml_parsing.h"
+#include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/occupancy_grid.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 #include "pb_rm_interfaces/msg/buff.hpp"
 #include "pb_rm_interfaces/msg/event_data.hpp"
 #include "pb_rm_interfaces/msg/game_robot_hp.hpp"
@@ -36,6 +38,8 @@ SentryBehaviorServer::SentryBehaviorServer(const rclcpp::NodeOptions & options)
   node()->get_parameter("use_cout_logger", use_cout_logger_);
   node()->get_parameter("export_tree_models_on_shutdown", export_tree_models_on_shutdown_);
   node()->get_parameter("tree_models_output_path", tree_models_output_path_);
+  globalBlackboard()->set("node", node());
+  declareDecisionParameters();
 
   subscribe<pb_rm_interfaces::msg::EventData>("referee/event_data", "referee_eventData");
   subscribe<pb_rm_interfaces::msg::GameRobotHP>("referee/all_robot_hp", "referee_allRobotHP");
@@ -49,6 +53,81 @@ SentryBehaviorServer::SentryBehaviorServer(const rclcpp::NodeOptions & options)
   auto costmap_qos = rclcpp::QoS(rclcpp::KeepLast(1)).transient_local().reliable();
   subscribe<nav_msgs::msg::OccupancyGrid>(
     "global_costmap/costmap", "nav_globalCostmap", costmap_qos);
+
+  auto odom_callback = [this](const nav_msgs::msg::Odometry::SharedPtr msg) {
+      geometry_msgs::msg::PoseStamped pose;
+      pose.header = msg->header;
+      pose.pose = msg->pose.pose;
+      globalBlackboard()->set("decision_current_pose", pose);
+    };
+  subscriptions_.push_back(
+    node()->create_subscription<nav_msgs::msg::Odometry>("odom", 10, odom_callback));
+  subscriptions_.push_back(
+    node()->create_subscription<nav_msgs::msg::Odometry>("odometry", 10, odom_callback));
+}
+
+void SentryBehaviorServer::declareDecisionParameters()
+{
+  auto declare_parameter = [this](const std::string & name, auto default_value) {
+      node()->declare_parameter(name, default_value);
+    };
+
+  declare_parameter("decision.goal_points.x", std::vector<double>{0.2, 5.38, 3.6, 0.0});
+  declare_parameter("decision.goal_points.y", std::vector<double>{0.18, 2.2, 3.6, 0.0});
+  declare_parameter("decision.goal_points.z", std::vector<double>{0.0, 0.0, 0.0, 0.0});
+
+  declare_parameter("decision.point_roles.supply_safe_point_index", 0);
+  declare_parameter("decision.point_roles.patrol_indices", std::vector<int64_t>{1, 2});
+  declare_parameter(
+    "decision.point_roles.low_hp_candidate_indices", std::vector<int64_t>{1, 2});
+  declare_parameter("decision.point_roles.critical_time_target_index", 1);
+
+  declare_parameter("decision.time_thresholds.abundant", 300);
+  declare_parameter("decision.time_thresholds.normal", 240);
+  declare_parameter("decision.time_thresholds.tense", 120);
+  declare_parameter("decision.time_thresholds.critical", 40);
+
+  declare_parameter("decision.hp_thresholds.abundant.high", 400);
+  declare_parameter("decision.hp_thresholds.abundant.medium", 220);
+  declare_parameter("decision.hp_thresholds.abundant.low", 120);
+
+  declare_parameter("decision.hp_thresholds.normal.high", 400);
+  declare_parameter("decision.hp_thresholds.normal.medium", 250);
+  declare_parameter("decision.hp_thresholds.normal.low", 150);
+
+  declare_parameter("decision.hp_thresholds.tense.high", 400);
+  declare_parameter("decision.hp_thresholds.tense.medium", 250);
+  declare_parameter("decision.hp_thresholds.tense.low", 150);
+
+  declare_parameter("decision.hp_thresholds.critical.high", 400);
+  declare_parameter("decision.hp_thresholds.critical.medium", 250);
+  declare_parameter("decision.hp_thresholds.critical.low", 150);
+
+  declare_parameter("decision.decision_config.path_tolerance", 0.2);
+  declare_parameter(
+    "decision.decision_config.nav2_action_server", std::string("/navigate_through_poses"));
+  declare_parameter("decision.decision_config.decision_period_ms", 100);
+  declare_parameter("decision.decision_config.goal_position_tolerance", 0.1);
+  declare_parameter("decision.decision_config.waypoint_stop_duration_s", 0.0);
+}
+
+void SentryBehaviorServer::initializeDecisionBlackboard()
+{
+  int supply_safe_point_index = 0;
+  int critical_time_target_index = 1;
+  node()->get_parameter(
+    "decision.point_roles.supply_safe_point_index", supply_safe_point_index);
+  node()->get_parameter(
+    "decision.point_roles.critical_time_target_index", critical_time_target_index);
+
+  globalBlackboard()->set("node", node());
+  globalBlackboard()->set("decision_supply_safe_point_index", supply_safe_point_index);
+  globalBlackboard()->set("decision_critical_time_target_index", critical_time_target_index);
+  globalBlackboard()->set("decision_patrol_cursor", 0);
+  globalBlackboard()->set("decision_patrol_direction", 1);
+  globalBlackboard()->set("decision_next_patrol_cursor", 0);
+  globalBlackboard()->set("decision_next_patrol_direction", 1);
+  globalBlackboard()->set("decision_low_hp_target_index", -1);
 }
 
 bool SentryBehaviorServer::onGoalReceived(
@@ -66,6 +145,7 @@ void SentryBehaviorServer::onTreeCreated(BT::Tree & tree)
     logger_cout_ = std::make_shared<BT::StdCoutLogger>(tree);
   }
   tick_count_ = 0;
+  initializeDecisionBlackboard();
 }
 
 std::optional<BT::NodeStatus> SentryBehaviorServer::onLoopAfterTick(BT::NodeStatus /*status*/)

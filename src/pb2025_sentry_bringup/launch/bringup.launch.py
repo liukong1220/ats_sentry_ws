@@ -36,6 +36,7 @@ def generate_launch_description():
     namespace = LaunchConfiguration("namespace")
     use_sim_time = LaunchConfiguration("use_sim_time")
     params_file = LaunchConfiguration("params_file")
+    behavior_params_file = LaunchConfiguration("behavior_params_file")
     rviz_config_file = LaunchConfiguration("rviz_config_file")
     use_robot_state_pub = LaunchConfiguration("use_robot_state_pub")
     use_rviz = LaunchConfiguration("use_rviz")
@@ -113,6 +114,16 @@ def generate_launch_description():
         description="Full path to the ROS2 parameters file to use for all launched nodes",
     )
 
+    declare_behavior_params_file_cmd = DeclareLaunchArgument(
+        "behavior_params_file",
+        default_value=os.path.join(
+            bt_bringup_dir,
+            "params",
+            "sentry_behavior.yaml",
+        ),
+        description="Full path to the ROS2 parameters file used by behavior tree nodes",
+    )
+
     declare_rviz_config_file_cmd = DeclareLaunchArgument(
         "rviz_config_file",
         default_value=os.path.join(bringup_dir, "rviz", "sentry_default_view.rviz"),
@@ -157,6 +168,7 @@ def generate_launch_description():
             "robot_name": robot_name,
             "namespace": namespace,
             "params_file": params_file,
+            "launch_robot_decision": "False",
             "use_rviz": "False",
             "use_respawn": use_respawn,
             "log_level": log_level,
@@ -190,7 +202,7 @@ def generate_launch_description():
         launch_arguments={
             "namespace": namespace,
             "use_sim_time": use_sim_time,
-            "params_file": params_file,
+            "params_file": behavior_params_file,
             "log_level": log_level,
         }.items(),
     )
@@ -234,6 +246,7 @@ def generate_launch_description():
     ld.add_action(declare_namespace_cmd)
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_params_file_cmd)
+    ld.add_action(declare_behavior_params_file_cmd)
     ld.add_action(declare_rviz_config_file_cmd)
     ld.add_action(declare_use_robot_state_pub_cmd)
     ld.add_action(declare_use_rviz_cmd)

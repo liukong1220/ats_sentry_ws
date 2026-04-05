@@ -48,6 +48,15 @@ list(APPEND plugin_libs is_status_ok)
 ament_auto_add_library(is_attacked SHARED plugins/condition/is_attacked.cpp)
 list(APPEND plugin_libs is_attacked)
 
+ament_auto_add_library(is_game_time_stage SHARED plugins/condition/is_game_time_stage.cpp)
+list(APPEND plugin_libs is_game_time_stage)
+
+ament_auto_add_library(is_hp_band SHARED plugins/condition/is_hp_band.cpp)
+list(APPEND plugin_libs is_hp_band)
+
+ament_auto_add_library(is_path_goal_reached SHARED plugins/condition/is_path_goal_reached.cpp)
+list(APPEND plugin_libs is_path_goal_reached)
+
 ####### Actions #######
 ament_auto_add_library(send_nav2_goal SHARED plugins/action/send_nav2_goal.cpp)
 list(APPEND plugin_libs send_nav2_goal)
@@ -66,6 +75,33 @@ list(APPEND plugin_libs pub_gimbal_absolute)
 
 ament_auto_add_library(pub_gimbal_velocity SHARED plugins/action/pub_gimbal_velocity.cpp)
 list(APPEND plugin_libs pub_gimbal_velocity)
+
+ament_auto_add_library(select_patrol_path SHARED plugins/action/select_patrol_path.cpp)
+list(APPEND plugin_libs select_patrol_path)
+
+ament_auto_add_library(select_nearest_retreat_path SHARED plugins/action/select_nearest_retreat_path.cpp)
+list(APPEND plugin_libs select_nearest_retreat_path)
+
+ament_auto_add_library(select_fixed_path SHARED plugins/action/select_fixed_path.cpp)
+list(APPEND plugin_libs select_fixed_path)
+
+ament_auto_add_library(advance_patrol_cursor SHARED plugins/action/advance_patrol_cursor.cpp)
+list(APPEND plugin_libs advance_patrol_cursor)
+
+ament_auto_add_library(reset_low_hp_target SHARED plugins/action/reset_low_hp_target.cpp)
+list(APPEND plugin_libs reset_low_hp_target)
+
+ament_auto_add_library(hold_stop_flag SHARED plugins/action/hold_stop_flag.cpp)
+list(APPEND plugin_libs hold_stop_flag)
+
+ament_auto_add_library(send_nav_through_poses SHARED plugins/action/send_nav_through_poses.cpp)
+list(APPEND plugin_libs send_nav_through_poses)
+
+ament_auto_add_library(select_path_goal_pose SHARED plugins/action/select_path_goal_pose.cpp)
+list(APPEND plugin_libs select_path_goal_pose)
+
+ament_auto_add_library(publish_decision_goal SHARED plugins/action/publish_decision_goal.cpp)
+list(APPEND plugin_libs publish_decision_goal)
 
 ####### Controls #######
 ament_auto_add_library(recovery_node SHARED plugins/control/recovery_node.cpp)

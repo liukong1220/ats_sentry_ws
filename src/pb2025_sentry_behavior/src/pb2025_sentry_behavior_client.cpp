@@ -23,13 +23,18 @@ SentryBehaviorClient::SentryBehaviorClient(const rclcpp::NodeOptions & options)
     return;
   }
 
-  timer_ = create_wall_timer(100ms, std::bind(&SentryBehaviorClient::sendGoal, this));
+  timer_ = create_wall_timer(500ms, std::bind(&SentryBehaviorClient::sendGoal, this));
 }
 
 void SentryBehaviorClient::sendGoal()
 {
+  if (goal_sent_ || goal_active_) {
+    return;
+  }
+
   using namespace std::placeholders;
   timer_->cancel();
+  goal_sent_ = true;
 
   auto goal_msg = BTExecuteTree::Goal();
   goal_msg.target_tree = target_tree_;
@@ -37,15 +42,35 @@ void SentryBehaviorClient::sendGoal()
   RCLCPP_INFO(get_logger(), "Sending goal to execute Behavior Tree: %s", target_tree_.c_str());
 
   auto options = rclcpp_action::Client<BTExecuteTree>::SendGoalOptions();
+  options.goal_response_callback =
+    std::bind(&SentryBehaviorClient::goalResponseCallback, this, _1);
   options.feedback_callback = std::bind(&SentryBehaviorClient::feedbackCallback, this, _1, _2);
   options.result_callback = std::bind(&SentryBehaviorClient::resultCallback, this, _1);
 
   action_client_->async_send_goal(goal_msg, options);
 }
 
+void SentryBehaviorClient::scheduleRetry()
+{
+  goal_sent_ = false;
+  goal_active_ = false;
+  timer_->reset();
+}
+
+void SentryBehaviorClient::goalResponseCallback(GoalHandleBTExecuateTree::SharedPtr goal_handle)
+{
+  if (!goal_handle) {
+    RCLCPP_ERROR(get_logger(), "Behavior tree goal was rejected by the server.");
+    scheduleRetry();
+    return;
+  }
+  goal_active_ = true;
+}
+
 void SentryBehaviorClient::resultCallback(
   const rclcpp_action::ClientGoalHandle<BTExecuteTree>::WrappedResult & result)
 {
+  goal_active_ = false;
   switch (result.code) {
     case rclcpp_action::ResultCode::SUCCEEDED:
       RCLCPP_INFO(get_logger(), "Goal succeeded: %s", result.result->return_message.c_str());
@@ -59,7 +84,7 @@ void SentryBehaviorClient::resultCallback(
     case rclcpp_action::ResultCode::UNKNOWN:
       break;
   }
-  timer_->reset();
+  scheduleRetry();
 }
 
 void SentryBehaviorClient::feedbackCallback(
