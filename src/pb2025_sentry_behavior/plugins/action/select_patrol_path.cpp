@@ -1,5 +1,7 @@
 #include "pb2025_sentry_behavior/plugins/action/select_patrol_path.hpp"
 
+#include <algorithm>
+
 namespace pb2025_sentry_behavior
 {
 
@@ -7,17 +9,19 @@ SelectPatrolPathAction::SelectPatrolPathAction(
   const std::string & name, const BT::NodeConfig & config)
 : BT::SyncActionNode(name, config)
 {
-  const auto node = decision::getNodeFromBlackboard(*this);
+  node_ = decision::getNodeFromBlackboard(*this);
 
   std::vector<double> xs;
   std::vector<double> ys;
   std::vector<double> zs;
   std::vector<int64_t> raw_patrol_indices;
 
-  node->get_parameter("decision.goal_points.x", xs);
-  node->get_parameter("decision.goal_points.y", ys);
-  node->get_parameter("decision.goal_points.z", zs);
-  node->get_parameter("decision.point_roles.patrol_indices", raw_patrol_indices);
+  node_->get_parameter("decision.goal_points.x", xs);
+  node_->get_parameter("decision.goal_points.y", ys);
+  node_->get_parameter("decision.goal_points.z", zs);
+  node_->get_parameter("decision.point_roles.patrol_indices", raw_patrol_indices);
+  node_->get_parameter(
+    "decision.decision_config.patrol_preview_points", patrol_preview_points_);
 
   goal_points_ = decision::buildGoalPoints(xs, ys, zs);
   patrol_indices_ = decision::toSizeIndices(
@@ -26,6 +30,9 @@ SelectPatrolPathAction::SelectPatrolPathAction(
 
 BT::NodeStatus SelectPatrolPathAction::tick()
 {
+  node_->get_parameter(
+    "decision.decision_config.patrol_preview_points", patrol_preview_points_);
+
   if (patrol_indices_.empty()) {
     RCLCPP_ERROR(logger_, "Patrol indices are empty");
     return BT::NodeStatus::FAILURE;
@@ -52,19 +59,28 @@ BT::NodeStatus SelectPatrolPathAction::tick()
     return BT::NodeStatus::SUCCESS;
   }
 
-  const auto [next_cursor, next_direction] =
-    decision::computeNextPatrolState(
-      patrol_cursor, patrol_direction, patrol_indices_.size());
+  const int preview_points = std::max(2, patrol_preview_points_);
+  std::vector<std::size_t> route_indices;
+  route_indices.reserve(static_cast<std::size_t>(preview_points));
+  route_indices.push_back(patrol_indices_[static_cast<std::size_t>(patrol_cursor)]);
 
-  const auto current_index = patrol_indices_[static_cast<std::size_t>(patrol_cursor)];
-  const auto next_index = patrol_indices_[static_cast<std::size_t>(next_cursor)];
+  auto preview_cursor = patrol_cursor;
+  auto preview_direction = patrol_direction;
+  for (int step = 1; step < preview_points; ++step) {
+    const auto [next_cursor, next_direction] =
+      decision::computeNextPatrolState(
+        preview_cursor, preview_direction, patrol_indices_.size());
+    route_indices.push_back(patrol_indices_[static_cast<std::size_t>(next_cursor)]);
+    preview_cursor = next_cursor;
+    preview_direction = next_direction;
+  }
 
   nav_msgs::msg::Path path =
-    decision::buildPathFromIndices(goal_points_, {current_index, next_index});
+    decision::buildPathFromIndices(goal_points_, route_indices);
 
   setOutput("path", path);
-  setOutput("next_cursor", next_cursor);
-  setOutput("next_direction", next_direction);
+  setOutput("next_cursor", preview_cursor);
+  setOutput("next_direction", preview_direction);
 
   return BT::NodeStatus::SUCCESS;
 }

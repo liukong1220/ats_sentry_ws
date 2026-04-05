@@ -57,6 +57,14 @@ list(APPEND plugin_libs is_hp_band)
 ament_auto_add_library(is_path_goal_reached SHARED plugins/condition/is_path_goal_reached.cpp)
 list(APPEND plugin_libs is_path_goal_reached)
 
+ament_auto_add_library(
+  is_decision_input_source SHARED
+  plugins/condition/is_decision_input_source.cpp)
+list(APPEND plugin_libs is_decision_input_source)
+
+ament_auto_add_library(is_decision_mode SHARED plugins/condition/is_decision_mode.cpp)
+list(APPEND plugin_libs is_decision_mode)
+
 ####### Actions #######
 ament_auto_add_library(send_nav2_goal SHARED plugins/action/send_nav2_goal.cpp)
 list(APPEND plugin_libs send_nav2_goal)

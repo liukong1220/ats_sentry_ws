@@ -71,6 +71,9 @@ private:
   bool use_cout_logger_;
   bool export_tree_models_on_shutdown_;
   std::string tree_models_output_path_;
+  std::string decision_input_source_;
+  std::string decision_sim_mode_;
+  std::string decision_sim_mode_topic_;
 };
 
 }  // namespace pb2025_sentry_behavior

@@ -11,7 +11,7 @@ from launch.actions import (
 )
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
@@ -32,6 +32,10 @@ def generate_launch_description():
     initial_x = LaunchConfiguration("initial_x")
     initial_y = LaunchConfiguration("initial_y")
     initial_yaw = LaunchConfiguration("initial_yaw")
+    publish_decision_mode = LaunchConfiguration("publish_decision_mode")
+    decision_mode = LaunchConfiguration("decision_mode")
+    decision_mode_topic = LaunchConfiguration("decision_mode_topic")
+    publish_referee_inputs = LaunchConfiguration("publish_referee_inputs")
 
     stdout_linebuf_envvar = SetEnvironmentVariable(
         "RCUTILS_LOGGING_BUFFERED_STREAM", "1"
@@ -54,7 +58,9 @@ def generate_launch_description():
 
     declare_behavior_params_cmd = DeclareLaunchArgument(
         "behavior_params_file",
-        default_value=os.path.join(behavior_dir, "params", "sentry_behavior.yaml"),
+        default_value=os.path.join(
+            behavior_dir, "params", "sentry_behavior_loopback.yaml"
+        ),
         description="Parameter file for the sentry behavior tree nodes.",
     )
 
@@ -104,6 +110,30 @@ def generate_launch_description():
         "initial_yaw",
         default_value="0.0",
         description="Initial robot yaw in map frame.",
+    )
+
+    declare_publish_decision_mode_cmd = DeclareLaunchArgument(
+        "publish_decision_mode",
+        default_value="True",
+        description="Whether the fake loopback node publishes decision/sim_mode.",
+    )
+
+    declare_decision_mode_cmd = DeclareLaunchArgument(
+        "decision_mode",
+        default_value="patrol",
+        description="Default decision simulation mode: patrol/anchor/retreat/safe.",
+    )
+
+    declare_decision_mode_topic_cmd = DeclareLaunchArgument(
+        "decision_mode_topic",
+        default_value="decision/sim_mode",
+        description="Topic used by the fake loopback node to publish simulation mode.",
+    )
+
+    declare_publish_referee_inputs_cmd = DeclareLaunchArgument(
+        "publish_referee_inputs",
+        default_value="False",
+        description="Whether the fake loopback node publishes referee topics.",
     )
 
     static_tf_base_link_cmd = Node(
@@ -176,6 +206,10 @@ def generate_launch_description():
                 "initial_x": initial_x,
                 "initial_y": initial_y,
                 "initial_yaw": initial_yaw,
+                "publish_decision_mode": publish_decision_mode,
+                "decision_mode": decision_mode,
+                "decision_mode_topic": decision_mode_topic,
+                "publish_referee_inputs": publish_referee_inputs,
             }
         ],
         arguments=["--ros-args", "--log-level", log_level],
@@ -199,7 +233,15 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(nav_bringup_dir, "launch", "rviz_launch.py")
         ),
-        condition=IfCondition(use_rviz),
+        condition=IfCondition(
+            PythonExpression(
+                [
+                    "'",
+                    use_rviz,
+                    "'.strip().lower() in ['true', '1', 'ture', 'yes', 'on']",
+                ]
+            )
+        ),
         launch_arguments={
             "namespace": "",
             "rviz_config": rviz_config_file,
@@ -222,6 +264,10 @@ def generate_launch_description():
     ld.add_action(declare_initial_x_cmd)
     ld.add_action(declare_initial_y_cmd)
     ld.add_action(declare_initial_yaw_cmd)
+    ld.add_action(declare_publish_decision_mode_cmd)
+    ld.add_action(declare_decision_mode_cmd)
+    ld.add_action(declare_decision_mode_topic_cmd)
+    ld.add_action(declare_publish_referee_inputs_cmd)
 
     ld.add_action(static_tf_base_link_cmd)
     ld.add_action(static_tf_base_scan_cmd)

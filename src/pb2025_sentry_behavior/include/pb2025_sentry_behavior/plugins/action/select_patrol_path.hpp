@@ -22,9 +22,11 @@ public:
 private:
   BT::NodeStatus tick() override;
 
+  rclcpp::Node::SharedPtr node_;
   rclcpp::Logger logger_ = rclcpp::get_logger("SelectPatrolPathAction");
   std::vector<geometry_msgs::msg::Point> goal_points_;
   std::vector<std::size_t> patrol_indices_;
+  int patrol_preview_points_ = 2;
 };
 
 }  // namespace pb2025_sentry_behavior

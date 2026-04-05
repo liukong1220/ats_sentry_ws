@@ -16,7 +16,7 @@
 namespace pb2025_sentry_behavior
 {
 
-class SendNavThroughPosesAction : public BT::StatefulActionNode
+class SendNavThroughPosesAction : public BT::SyncActionNode
 {
 public:
   using NavigateThroughPoses = nav2_msgs::action::NavigateThroughPoses;
@@ -26,9 +26,7 @@ public:
 
   static BT::PortsList providedPorts();
 
-  BT::NodeStatus onStart() override;
-  BT::NodeStatus onRunning() override;
-  void onHalted() override;
+  BT::NodeStatus tick() override;
 
 private:
   void resultCallback(std::uint64_t request_id, const GoalHandle::WrappedResult & result);
@@ -47,12 +45,11 @@ private:
   nav_msgs::msg::Path active_path_;
   geometry_msgs::msg::PoseStamped latest_pose_;
   bool has_current_pose_ = false;
-  bool result_received_ = false;
   bool goal_pending_ = false;
-  bool goal_succeeded_ = false;
+  bool last_goal_succeeded_ = false;
   std::uint64_t goal_request_id_ = 0;
-  rclcpp_action::ResultCode last_result_code_ = rclcpp_action::ResultCode::UNKNOWN;
   double path_compare_tolerance_ = 0.1;
+  double action_server_wait_timeout_s_ = 2.0;
 };
 
 }  // namespace pb2025_sentry_behavior

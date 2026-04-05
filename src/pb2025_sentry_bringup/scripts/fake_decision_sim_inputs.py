@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 
 import math
+from typing import List, Optional, Tuple
 
 import rclpy
 from geometry_msgs.msg import PoseWithCovarianceStamped
 from pb_rm_interfaces.msg import GameStatus, RfidStatus, RobotStatus
 from rclpy.node import Node
+from std_msgs.msg import String
 
 
 def yaw_to_quaternion(yaw: float):
     half_yaw = yaw * 0.5
     return (0.0, 0.0, math.sin(half_yaw), math.cos(half_yaw))
+
+
+def normalize_mode(mode: str) -> str:
+    return mode.strip().lower()
 
 
 class FakeDecisionSimInputs(Node):
@@ -25,6 +31,12 @@ class FakeDecisionSimInputs(Node):
         self.declare_parameter("initial_y", 0.0)
         self.declare_parameter("initial_yaw", 0.0)
 
+        self.declare_parameter("publish_decision_mode", True)
+        self.declare_parameter("decision_mode", "patrol")
+        self.declare_parameter("decision_mode_topic", "decision/sim_mode")
+        self.declare_parameter("mode_script", [])
+
+        self.declare_parameter("publish_referee_inputs", False)
         self.declare_parameter("game_progress", int(GameStatus.RUNNING))
         self.declare_parameter("stage_remain_time", 420)
 
@@ -45,6 +57,12 @@ class FakeDecisionSimInputs(Node):
         self.initial_pose_pub = self.create_publisher(
             PoseWithCovarianceStamped, "initialpose", 10
         )
+        self.decision_mode_topic = str(
+            self.get_parameter("decision_mode_topic").value
+        )
+        self.decision_mode_pub = self.create_publisher(
+            String, self.decision_mode_topic, 10
+        )
         self.game_status_pub = self.create_publisher(
             GameStatus, "referee/game_status", 10
         )
@@ -55,20 +73,96 @@ class FakeDecisionSimInputs(Node):
             RfidStatus, "referee/rfid_status", 10
         )
 
-        publish_rate = self.get_parameter("publish_rate").value
+        publish_rate = float(self.get_parameter("publish_rate").value)
         self.initial_pose_repeats = int(
             self.get_parameter("initial_pose_repeats").value
         )
+        self.start_time = self.get_clock().now()
+        self.last_mode: Optional[str] = None
+        self.mode_script_cache_key: Optional[Tuple[str, ...]] = None
+        self.mode_script_cache: List[Tuple[float, str]] = []
 
-        self.create_timer(1.0 / publish_rate, self.publish_referee_messages)
+        self.create_timer(1.0 / publish_rate, self.publish_loop)
         self.initial_pose_timer = self.create_timer(
             float(self.get_parameter("initial_pose_period").value),
             self.publish_initial_pose,
         )
 
         self.get_logger().info(
-            "Fake loopback decision inputs are active. Publishing referee state and initial pose."
+            "Fake loopback inputs are active. Default mode=%s, publish_referee_inputs=%s."
+            % (
+                str(self.get_parameter("decision_mode").value),
+                str(self.get_parameter("publish_referee_inputs").value),
+            )
         )
+
+    def parse_mode_script(self) -> List[Tuple[float, str]]:
+        raw_script = tuple(str(item) for item in self.get_parameter("mode_script").value)
+        if raw_script == self.mode_script_cache_key:
+            return self.mode_script_cache
+
+        parsed: List[Tuple[float, str]] = []
+        for entry in raw_script:
+            if ":" not in entry:
+                self.get_logger().warn(
+                    "Ignore invalid mode_script entry '%s', expected '<seconds>:<mode>'"
+                    % entry
+                )
+                continue
+
+            time_text, mode_text = entry.split(":", 1)
+            try:
+                trigger_time = float(time_text.strip())
+            except ValueError:
+                self.get_logger().warn(
+                    "Ignore invalid mode_script time '%s' in entry '%s'"
+                    % (time_text, entry)
+                )
+                continue
+
+            mode = normalize_mode(mode_text)
+            if mode not in ("patrol", "anchor", "retreat", "safe"):
+                self.get_logger().warn(
+                    "Ignore invalid mode_script mode '%s' in entry '%s'"
+                    % (mode_text, entry)
+                )
+                continue
+
+            parsed.append((max(0.0, trigger_time), mode))
+
+        parsed.sort(key=lambda item: item[0])
+        self.mode_script_cache_key = raw_script
+        self.mode_script_cache = parsed
+        return parsed
+
+    def resolve_decision_mode(self) -> str:
+        script = self.parse_mode_script()
+        if script:
+            elapsed = (
+                self.get_clock().now().nanoseconds - self.start_time.nanoseconds
+            ) / 1e9
+            resolved_mode = script[0][1]
+            for trigger_time, scripted_mode in script:
+                if elapsed >= trigger_time:
+                    resolved_mode = scripted_mode
+                else:
+                    break
+            return resolved_mode
+
+        configured_mode = normalize_mode(str(self.get_parameter("decision_mode").value))
+        if configured_mode not in ("patrol", "anchor", "retreat", "safe"):
+            self.get_logger().warn(
+                "Unsupported decision_mode '%s', fallback to 'patrol'"
+                % configured_mode
+            )
+            return "patrol"
+        return configured_mode
+
+    def ensure_decision_mode_publisher(self):
+        topic = str(self.get_parameter("decision_mode_topic").value).strip()
+        if topic and topic != self.decision_mode_topic:
+            self.decision_mode_topic = topic
+            self.decision_mode_pub = self.create_publisher(String, topic, 10)
 
     def publish_initial_pose(self):
         if self.initial_pose_repeats <= 0:
@@ -94,7 +188,24 @@ class FakeDecisionSimInputs(Node):
         self.initial_pose_pub.publish(initial_pose)
         self.initial_pose_repeats -= 1
 
+    def publish_decision_mode(self):
+        if not bool(self.get_parameter("publish_decision_mode").value):
+            return
+
+        self.ensure_decision_mode_publisher()
+        mode = self.resolve_decision_mode()
+        if mode != self.last_mode:
+            self.get_logger().info("Decision simulation mode: %s" % mode)
+            self.last_mode = mode
+
+        message = String()
+        message.data = mode
+        self.decision_mode_pub.publish(message)
+
     def publish_referee_messages(self):
+        if not bool(self.get_parameter("publish_referee_inputs").value):
+            return
+
         game_status = GameStatus()
         game_status.game_progress = int(self.get_parameter("game_progress").value)
         game_status.stage_remain_time = int(
@@ -138,6 +249,10 @@ class FakeDecisionSimInputs(Node):
             self.get_parameter("center_gain_point").value
         )
         self.rfid_status_pub.publish(rfid_status)
+
+    def publish_loop(self):
+        self.publish_decision_mode()
+        self.publish_referee_messages()
 
 
 def main():
