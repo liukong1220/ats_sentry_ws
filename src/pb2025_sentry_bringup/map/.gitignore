@@ -1,2 +1,4 @@
 *.yaml
 *.pgm
+!rmul.yaml
+!rmul.pgm

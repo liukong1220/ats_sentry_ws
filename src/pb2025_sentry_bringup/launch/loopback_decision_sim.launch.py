@@ -17,8 +17,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     bringup_dir = get_package_share_directory("pb2025_sentry_bringup")
-    nav_bringup_dir = get_package_share_directory("pb2025_nav_bringup")
     behavior_dir = get_package_share_directory("pb2025_sentry_behavior")
+    nav_bringup_dir = get_package_share_directory("pb2025_nav_bringup")
     loopback_dir = get_package_share_directory("nav2_loopback_sim")
 
     map_yaml_file = LaunchConfiguration("map")
@@ -44,9 +44,7 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         "map",
-        default_value=os.path.join(
-            nav_bringup_dir, "map", "reality", "rmul.yaml"
-        ),
+        default_value=os.path.join(bringup_dir, "map", "rmul.yaml"),
         description="Full path to the map yaml file used by loopback simulation.",
     )
 

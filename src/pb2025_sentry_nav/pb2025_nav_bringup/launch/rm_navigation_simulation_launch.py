@@ -16,6 +16,7 @@ from nav2_common.launch import RewrittenYaml
 def generate_launch_description():
     # Get the launch directory
     bringup_dir = get_package_share_directory("pb2025_nav_bringup")
+    assets_dir = get_package_share_directory("pb2025_sentry_bringup")
     launch_dir = os.path.join(bringup_dir, "launch")
 
     # Create the launch configuration variables
@@ -57,14 +58,14 @@ def generate_launch_description():
 
     declare_world_cmd = DeclareLaunchArgument(
         "world",
-        default_value="rmuc_2025",
-        description="Select world: 'rmul_2024' or 'rmuc_2024' or 'rmul_2025' or 'rmuc_2025' (map file share the same name as the this parameter)",
+        default_value="rmul",
+        description="Select world. Map and PCD file share the same name as this parameter.",
     )
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         "map",
         default_value=[
-            TextSubstitution(text=os.path.join(bringup_dir, "map", "simulation", "")),
+            TextSubstitution(text=os.path.join(assets_dir, "map", "")),
             world,
             TextSubstitution(text=".yaml"),
         ],
@@ -74,7 +75,7 @@ def generate_launch_description():
     declare_prior_pcd_file_cmd = DeclareLaunchArgument(
         "prior_pcd_file",
         default_value=[
-            TextSubstitution(text=os.path.join(bringup_dir, "pcd", "simulation", "")),
+            TextSubstitution(text=os.path.join(assets_dir, "pcd", "")),
             world,
             TextSubstitution(text=".pcd"),
         ],
