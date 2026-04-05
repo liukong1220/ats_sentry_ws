@@ -175,6 +175,15 @@ def generate_launch_description():
         }.items(),
     )
 
+    static_tf_base_link_cmd = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="static_tf_base_link",
+        condition=IfCondition(PythonExpression(["not ", use_robot_state_pub])),
+        arguments=["--frame-id", "base_footprint", "--child-frame-id", "base_link"],
+        output="screen",
+    )
+
     start_navigation_launch_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -257,6 +266,7 @@ def generate_launch_description():
     # Add the actions to launch all of the navigation nodes
     ld.add_action(start_rviz_cmd)
     ld.add_action(start_serial_driver_cmd)
+    ld.add_action(static_tf_base_link_cmd)
     ld.add_action(start_navigation_launch_cmd)
     ld.add_action(start_behavior_launch_cmd)
     ld.add_action(record_rosbag_cmd)
